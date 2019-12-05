@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://github.com/lu-git">
   <title>CentOS7编译安装Amber18 | 卢记杂货店</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Amber18下载 - [Amber18.tar.bz2](链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;19PsOzzC_qWQ6NYonEwWvzQ)&#96;提取码：gecf&#96; - [AmberTools19.tar.bz2](链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1_lAYXtoZROdlJKZDCC-xMg)&#96;提取码：knaz&#96; Amber18编译安装 此处为安装实例，">
+  <meta name="description" content="Amber18下载 Amber18.tar.bz2提取码：gecf AmberTools19.tar.bz2提取码：knaz  Amber18编译安装此处为安装实例，把安装好的软件上传于&#x2F;public&#x2F;software&#x2F; 1$ cd &amp;#x2F;public&amp;#x2F;software&amp;#x2F;2$ tar xvfj Amber18.tar.bz23$ tar xvfj AmberTools19">
 <meta name="keywords" content="软件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS7编译安装Amber18">
 <meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;lu-git&#x2F;2019&#x2F;12&#x2F;05&#x2F;amber18_install&#x2F;index.html">
 <meta property="og:site_name" content="卢记杂货店">
-<meta property="og:description" content="Amber18下载 - [Amber18.tar.bz2](链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;19PsOzzC_qWQ6NYonEwWvzQ)&#96;提取码：gecf&#96; - [AmberTools19.tar.bz2](链接：https:&#x2F;&#x2F;pan.baidu.com&#x2F;s&#x2F;1_lAYXtoZROdlJKZDCC-xMg)&#96;提取码：knaz&#96; Amber18编译安装 此处为安装实例，">
+<meta property="og:description" content="Amber18下载 Amber18.tar.bz2提取码：gecf AmberTools19.tar.bz2提取码：knaz  Amber18编译安装此处为安装实例，把安装好的软件上传于&#x2F;public&#x2F;software&#x2F; 1$ cd &amp;#x2F;public&amp;#x2F;software&amp;#x2F;2$ tar xvfj Amber18.tar.bz23$ tar xvfj AmberTools19">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-05T15:50:26.884Z">
+<meta property="og:updated_time" content="2019-12-05T15:54:53.402Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="卢记杂货店" type="application/atom+xml">
@@ -64,7 +64,7 @@
 		</nav>
 		<nav>
 			<a>总文章数 2</a>
-			<a>总字数 <span class="post-count">813</span></a>
+			<a>总字数 <span class="post-count">794</span></a>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -163,12 +163,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol>
-<li><p>Amber18下载</p>
-<pre><code>- [Amber18.tar.bz2](链接：https://pan.baidu.com/s/19PsOzzC_qWQ6NYonEwWvzQ)`提取码：gecf`
-- [AmberTools19.tar.bz2](链接：https://pan.baidu.com/s/1_lAYXtoZROdlJKZDCC-xMg)`提取码：knaz`</code></pre></li>
-<li><p>Amber18编译安装</p>
-<p>此处为安装实例，把安装好的软件上传于<code>/public/software/</code></p>
+        <h1 id="Amber18下载"><a href="#Amber18下载" class="headerlink" title="Amber18下载"></a>Amber18下载</h1><ul>
+<li><a href="链接：https://pan.baidu.com/s/19PsOzzC_qWQ6NYonEwWvzQ">Amber18.tar.bz2</a><code>提取码：gecf</code></li>
+<li><a href="链接：https://pan.baidu.com/s/1_lAYXtoZROdlJKZDCC-xMg">AmberTools19.tar.bz2</a><code>提取码：knaz</code></li>
+</ul>
+<h1 id="Amber18编译安装"><a href="#Amber18编译安装" class="headerlink" title="Amber18编译安装"></a>Amber18编译安装</h1><p>此处为安装实例，把安装好的软件上传于<code>/public/software/</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ cd &#x2F;public&#x2F;software&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ tar xvfj Amber18.tar.bz2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$ tar xvfj AmberTools19.tar.bz2</span></pre></td></tr></table></figure>
 
 <p>两个压缩包会解压到一个名为amber18的文件夹里。  </p>
@@ -180,17 +179,20 @@
 
 
 
+<ul>
+<li><p>串行安装</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ cd $AMBERHOME</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ .&#x2F;configure --with-python $&#123;Python执行路径&#125; gnu</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">#此命令会生成处amber.sh和amber.csh文件，这两个文件可以用于添加amber所需的环境变量</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$ sourch amber.sh # 添加环境变量信息，也可以自己动手在~&#x2F;.bashrc中添加</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">$ make install # 编译安装</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">$ make test # 编译测试</span></pre></td></tr></table></figure>
+</blockquote>
 </li>
-</ol>
-<pre><code>+ 串行安装
-
-  &gt; <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ cd $AMBERHOME</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ .&#x2F;configure --with-python $&#123;Python执行路径&#125; gnu</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">#此命令会生成处amber.sh和amber.csh文件，这两个文件可以用于添加amber所需的环境变量</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$ sourch amber.sh # 添加环境变量信息，也可以自己动手在~&#x2F;.bashrc中添加</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">$ make install # 编译安装</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">$ make test # 编译测试</span></pre></td></tr></table></figure>
-
-+ 多线程(openmpi)编译安装：
-
-  安装openmpi以及配置环境变量的过程此处不再赘述。
-
-  &gt; <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ cd $AMBERHOME</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ .&#x2F;configure --with-python $&#123;Python执行路径&#125; -mpi gnu</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"># 此命令会生成处amber.sh和amber.csh文件，这两个文件可以用于添加amber所需的环境变量</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$ source amber.sh # 添加环境变量信息，也可以自己动手在~&#x2F;.bashrc中添加</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">$ make install # 编译安装</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">$ export DO_PARALLEL&#x3D;&quot;mpirun --allow-run-as-root -np 4&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"># openmpi2.0以后的版本，用户是root的话，mpirun并行运行的话不会计算，须加上--allow-run-as-root</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">$ .&#x2F;configure --with-python $&#123;Python执行路径&#125; -openmp gnu</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">$ make openmp</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">$ make test # 编译测试</span></pre></td></tr></table></figure></code></pre><ul>
+<li><p>多线程(openmpi)编译安装：</p>
+<p>安装openmpi以及配置环境变量的过程此处不再赘述。</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ cd $AMBERHOME</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ .&#x2F;configure --with-python $&#123;Python执行路径&#125; -mpi gnu</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"># 此命令会生成处amber.sh和amber.csh文件，这两个文件可以用于添加amber所需的环境变量</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$ source amber.sh # 添加环境变量信息，也可以自己动手在~&#x2F;.bashrc中添加</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">$ make install # 编译安装</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">$ export DO_PARALLEL&#x3D;&quot;mpirun --allow-run-as-root -np 4&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"># openmpi2.0以后的版本，用户是root的话，mpirun并行运行的话不会计算，须加上--allow-run-as-root</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">$ .&#x2F;configure --with-python $&#123;Python执行路径&#125; -openmp gnu</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">$ make openmp</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">$ make test # 编译测试</span></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<ul>
 <li><p>GPU版本编译安装：</p>
 <p>安装显卡驱动和cuda以及配置环境变量的过程此处也不再赘述。</p>
 <blockquote>
@@ -373,7 +375,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Amber18下载"><span class="toc-number">1.</span> <span class="toc-text">Amber18下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Amber18编译安装"><span class="toc-number">2.</span> <span class="toc-text">Amber18编译安装</span></a></li></ol>
                     </div>
                 </span>
             </div>
