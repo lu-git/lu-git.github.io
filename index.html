@@ -171,71 +171,7 @@
 <li>在 Linux 超算平台上，通常会安装有不同版本的多种编译器和其他软件等，如常用的编译器有 intel 和 gnu，常用的 MPI 并行库包括 intel mpi，openmpi，mpich2 等，而且对于同一软件，还包含不同的版本或采用不同编译设置得到的可执行程序和链接库等。在使用这些程序时，经常需要对环境变量进行修改。并且由于程序编译时会调用不同类型编译器或第三库，这时程序之间还存在着依赖关系。这使得当执行某个特定版本的程序时，环境变量的修改变得十分复杂。</li>
 <li>Environment Modules 包是一个简化 shell 初始化的工具，它允许用户在使用 modulefiles 进行会话期间轻松修改其环境。每个模块文件都包含为应用程序配置 shell 所需的信息。模块文件可以由系统上的许多用户共享，并且用户可以拥有自己的集合来补充或替换共享模块文件。</li>
 </ul>
-<h1 id="Modules安装"><a href="#Modules安装" class="headerlink" title="Modules安装"></a>Modules安装</h1><ul>
-<li><p>可以使用yum安装，这里用普通用户以源码安装方式安装，在<a href="http://modules.sourceforge.net/" target="_blank" rel="noopener">Modules官网</a>下载最新版本的源代码。此处提供<a href="https://pan.baidu.com/s/1C-xnu2xSsScsenzRVCgeiw" target="_blank" rel="noopener">modules-4.4.0的网盘下载地址</a>，提取码：<code>tdpx</code>。</p>
-</li>
-<li><p>以下为实际安装过程，路径设置请根据各自所需。</p>
-</li>
-<li><p>下载完毕后上传到服务器上，压缩包上传目录为<code>/home/lyh/MDT/package/</code>，安装目录为<code>/home/lyh/MDT/software/</code>。</p>
-</li>
-</ul>
-<blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ~/MDT/package/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> tar -zxvf modules-4.4.0.tar.gz -C ../software/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ../software/modules-4.4.0</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./configure --prefix=/home/lyh/MDT/software/modules</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> make</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> make install</span></span></pre></td></tr></table></figure>
-</blockquote>
-<ul>
-<li>安装完毕后我们将modules设置脚本添加入环境变量中，注意，modules中包含多种shell设置脚本，可以根据不同情况设置。这里由于我用的是bash，输入如下命令即可</li>
-</ul>
-<blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> <span class="string">'source /home/lyh/MDT/software/modules/init/bash'</span> &gt;&gt; ~/.bashrc</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">source</span> ~/.bashrc</span></span></pre></td></tr></table></figure>
-</blockquote>
-<ul>
-<li>输入如下命令，查看当前包含的模块并加载用户模块</li>
-</ul>
-<blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module avail</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">------------------------------------------------------------------------ /home/lyh/MDT/software/modules/modulefiles -------------------------------------------------------------------------</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">dot  module-git  module-info  modules  null  use.own</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module load use.own</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module list</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">Currently Loaded Modulefiles:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">1) use.own</span></pre></td></tr></table></figure>
-</blockquote>
-<ul>
-<li>此时，用户目录下会出现<code>privatemodules</code>文件夹，用户可以直接在此文件夹中添加自定义模块文件添加环境变量。</li>
-</ul>
-<h1 id="Modules使用"><a href="#Modules使用" class="headerlink" title="Modules使用"></a>Modules使用</h1><ul>
-<li>Modules 使用包括 <code>shell</code> 命令和<code>modulefile</code>文件定义两部分内容，下面将分别进行介绍。</li>
-</ul>
-<ol>
-<li><p>Moudels指令</p>
-<ul>
-<li>module 安装好后，即可调用<code>module [command]</code>来查看或加载模块，主要指令如下：</li>
-</ul>
-<blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module avail  <span class="comment">#列出当前module path 中的所有可用模块文件</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">----------------------------------------------------------------------- /home/lyh/MDT/software/modules/modulefiles -------------------------------------------------------------------------</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">dot  module-git  module-info  modules  null  use.own</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">--------------------------------------------------------------------------------- /home/lyh/privatemodules ----------------------------------------------------------------------------------</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">cmake-3.15.3  null</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module load cmake-3.15.3 <span class="comment">#加载模块文件/类</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module list <span class="comment">#显示已经加载的模块</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">Currently Loaded Modulefiles:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"> 1) use.own   2) cmake-3.15.3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module unload cmake-3.15.3  <span class="comment">#卸载模块文件/类</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module list <span class="comment">#显示已经加载的模块</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">Currently Loaded Modulefiles:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"> 1) use.own</span></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ol>
-<ol start="2">
-<li><p>Modules脚本内容</p>
-<ul>
-<li>采用 <code>module load</code>命令时，可用的模块其实都是安装在 <code>module path</code>目录下的<code>modulefile</code> 文件。一个基本 modulefile 内容如下：</li>
-</ul>
-<blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">%Module -*- tcl -*-</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># This is a module to access something</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 显示 module <span class="built_in">help</span> 主要内容</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">proc ModulesHelp &#123; &#125; &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        puts stderr "This module sets up access to something"</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 显示 module whatis 显示主要内容</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">module-whatis "sets up access to something"</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> module 加载前需要模块类</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">prereq module_flag</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> module 加载冲突模块类</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">conflict another_module_flag</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 加载其他模块</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">module load gcc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 设置环境变量</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">setenv       SOMEVERION       0.95</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 添加环境变量</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">append-path  PATH             /home/[user]/[somedir]/bin</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">append-path  MANPATH          /home/[user]/[somedir]/man</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">append-path  LD_LIBRARY_PATH  /home/[user]/[somedir]/lib</span></pre></td></tr></table></figure>
-</blockquote>
-<ul>
-<li>其中包含的设置关键字有以下几个<ul>
-<li>prereq 指示加载此脚本需要预先加载的模块名，当这些模块没有预先加载时，module load 此模块会报错；</li>
-<li>conflict 指示与此模块冲突的其他模块类，注意这里不仅可以添加 modulefile 文件名称，也可添加 modulefile 所在路径文件名，此时代表模块和文件内所有模块类都会产生冲突；</li>
-<li>module load 指示加载此模块同时自动加载的模块，注意其和 prereq 命令的不同；</li>
-<li>setenv 设定环境变量；</li>
-<li>append-path 添加环境变量。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h1 id="Modules脚本示例"><a href="#Modules脚本示例" class="headerlink" title="Modules脚本示例"></a>Modules脚本示例</h1><ul>
-<li>以Cmake3.15.3为例：</li>
-</ul>
-<blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat ~/privatemodules/cmake-3.15.3</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">%Module1.0<span class="comment">#####################################################################</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># modules modulefile</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">module-whatis	"Cmake-3.15.3"</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">prepend-path	PATH	/home/lyh/MDT/software/cmake/bin</span></pre></td></tr></table></figure></blockquote>
-
+        
       
 
 
