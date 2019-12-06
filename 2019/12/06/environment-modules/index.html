@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lu-git.github.io">
-  <title>Archives: 2019/12 | 卢记杂货店</title>
+  <title>environment modul 配置 | 卢记杂货店</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="与我常在">
-<meta property="og:type" content="website">
-<meta property="og:title" content="卢记杂货店">
-<meta property="og:url" content="https:&#x2F;&#x2F;lu-git.github.io&#x2F;archives&#x2F;2019&#x2F;12&#x2F;index.html">
+  <meta name="description" content="Modules简介 在 Linux 超算平台上，通常会安装有不同版本的多种编译器和其他软件等，如常用的编译器有 intel 和 gnu，常用的 MPI 并行库包括 intel mpi，openmpi，mpich2 等，而且对于同一软件，还包含不同的版本或采用不同编译设置得到的可执行程序和链接库等。在使用这些程序时，经常需要对环境变量进行修改。并且由于程序编译时会调用不同类型编译器或第三库，这时程序">
+<meta name="keywords" content="工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="environment modul 配置">
+<meta property="og:url" content="https:&#x2F;&#x2F;lu-git.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;environment-modules&#x2F;index.html">
 <meta property="og:site_name" content="卢记杂货店">
-<meta property="og:description" content="与我常在">
+<meta property="og:description" content="Modules简介 在 Linux 超算平台上，通常会安装有不同版本的多种编译器和其他软件等，如常用的编译器有 intel 和 gnu，常用的 MPI 并行库包括 intel mpi，openmpi，mpich2 等，而且对于同一软件，还包含不同的版本或采用不同编译设置得到的可执行程序和链接库等。在使用这些程序时，经常需要对环境变量进行修改。并且由于程序编译时会调用不同类型编译器或第三库，这时程序">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-06T07:57:49.976Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="卢记杂货店" type="application/atom+xml">
@@ -145,36 +147,163 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-environment-modules" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/06/environment-modules/" class="archive-article-date">
-  	<time datetime="2019-12-06T07:17:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/06/environment-modules/">environment modul 配置</a>
+    <h1 class="article-title" itemprop="name">
+      environment modul 配置
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/12/06/environment-modules/" class="archive-article-date">
+  	<time datetime="2019-12-06T07:17:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Modules简介"><a href="#Modules简介" class="headerlink" title="Modules简介"></a>Modules简介</h1><ul>
+<li>在 Linux 超算平台上，通常会安装有不同版本的多种编译器和其他软件等，如常用的编译器有 intel 和 gnu，常用的 MPI 并行库包括 intel mpi，openmpi，mpich2 等，而且对于同一软件，还包含不同的版本或采用不同编译设置得到的可执行程序和链接库等。在使用这些程序时，经常需要对环境变量进行修改。并且由于程序编译时会调用不同类型编译器或第三库，这时程序之间还存在着依赖关系。这使得当执行某个特定版本的程序时，环境变量的修改变得十分复杂。</li>
+<li>Environment Modules 包是一个简化 shell 初始化的工具，它允许用户在使用 modulefiles 进行会话期间轻松修改其环境。每个模块文件都包含为应用程序配置 shell 所需的信息。模块文件可以由系统上的许多用户共享，并且用户可以拥有自己的集合来补充或替换共享模块文件。</li>
+</ul>
+<h1 id="Modules安装"><a href="#Modules安装" class="headerlink" title="Modules安装"></a>Modules安装</h1><ul>
+<li><p>可以使用yum安装，这里用普通用户以源码安装方式安装，在<a href="http://modules.sourceforge.net/" target="_blank" rel="noopener">Modules官网</a>下载最新版本的源代码。此处提供<a href="https://pan.baidu.com/s/1C-xnu2xSsScsenzRVCgeiw" target="_blank" rel="noopener">modules-4.4.0的网盘下载地址</a>，提取码：<code>tdpx</code>。</p>
+</li>
+<li><p>以下为实际安装过程，路径设置请根据各自所需。</p>
+</li>
+<li><p>下载完毕后上传到服务器上，压缩包上传目录为<code>/home/lyh/MDT/package/</code>，安装目录为<code>/home/lyh/MDT/software/</code>。</p>
+</li>
+</ul>
+<blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ~/MDT/package/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> tar -zxvf modules-4.4.0.tar.gz -C ../software/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ../software/modules-4.4.0</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./configure --prefix=/home/lyh/MDT/software/modules</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> make</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> make install</span></span></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li>安装完毕后我们将modules设置脚本添加入环境变量中，注意，modules中包含多种shell设置脚本，可以根据不同情况设置。这里由于我用的是bash，输入如下命令即可</li>
+</ul>
+<blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> <span class="string">'source /home/lyh/MDT/software/modules/init/bash'</span> &gt;&gt; ~/.bashrc</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">source</span> ~/.bashrc</span></span></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li>输入如下命令，查看当前包含的模块并加载用户模块</li>
+</ul>
+<blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module avail</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">------------------------------------------------------------------------ /home/lyh/MDT/software/modules/modulefiles -------------------------------------------------------------------------</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">dot  module-git  module-info  modules  null  use.own</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module load use.own</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module list</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">Currently Loaded Modulefiles:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">1) use.own</span></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li>此时，用户目录下会出现<code>privatemodules</code>文件夹，用户可以直接在此文件夹中添加自定义模块文件添加环境变量。</li>
+</ul>
+<h1 id="Modules使用"><a href="#Modules使用" class="headerlink" title="Modules使用"></a>Modules使用</h1><ul>
+<li>Modules 使用包括 <code>shell</code> 命令和<code>modulefile</code>文件定义两部分内容，下面将分别进行介绍。</li>
+</ul>
+<ol>
+<li><p>Moudels指令</p>
+<ul>
+<li>module 安装好后，即可调用<code>module [command]</code>来查看或加载模块，主要指令如下：</li>
+</ul>
+<blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module avail  <span class="comment">#列出当前module path 中的所有可用模块文件</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">----------------------------------------------------------------------- /home/lyh/MDT/software/modules/modulefiles -------------------------------------------------------------------------</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">dot  module-git  module-info  modules  null  use.own</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">--------------------------------------------------------------------------------- /home/lyh/privatemodules ----------------------------------------------------------------------------------</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">cmake-3.15.3  null</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module load cmake-3.15.3 <span class="comment">#加载模块文件/类</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module list <span class="comment">#显示已经加载的模块</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">Currently Loaded Modulefiles:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"> 1) use.own   2) cmake-3.15.3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module unload cmake-3.15.3  <span class="comment">#卸载模块文件/类</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module list <span class="comment">#显示已经加载的模块</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">Currently Loaded Modulefiles:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"> 1) use.own</span></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ol>
+<ol start="2">
+<li><p>Modules脚本内容</p>
+<ul>
+<li>采用 <code>module load</code>命令时，可用的模块其实都是安装在 <code>module path</code>目录下的<code>modulefile</code> 文件。一个基本 modulefile 内容如下：</li>
+</ul>
+<blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">%Module -*- tcl -*-</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># This is a module to access something</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 显示 module <span class="built_in">help</span> 主要内容</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">proc ModulesHelp &#123; &#125; &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        puts stderr "This module sets up access to something"</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 显示 module whatis 显示主要内容</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">module-whatis "sets up access to something"</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> module 加载前需要模块类</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">prereq module_flag</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> module 加载冲突模块类</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">conflict another_module_flag</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 加载其他模块</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">module load gcc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 设置环境变量</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">setenv       SOMEVERION       0.95</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 添加环境变量</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">append-path  PATH             /home/[user]/[somedir]/bin</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">append-path  MANPATH          /home/[user]/[somedir]/man</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">append-path  LD_LIBRARY_PATH  /home/[user]/[somedir]/lib</span></pre></td></tr></table></figure>
+</blockquote>
+<ul>
+<li>其中包含的设置关键字有以下几个<ul>
+<li>prereq 指示加载此脚本需要预先加载的模块名，当这些模块没有预先加载时，module load 此模块会报错；</li>
+<li>conflict 指示与此模块冲突的其他模块类，注意这里不仅可以添加 modulefile 文件名称，也可添加 modulefile 所在路径文件名，此时代表模块和文件内所有模块类都会产生冲突；</li>
+<li>module load 指示加载此模块同时自动加载的模块，注意其和 prereq 命令的不同；</li>
+<li>setenv 设定环境变量；</li>
+<li>append-path 添加环境变量。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="Modules脚本示例"><a href="#Modules脚本示例" class="headerlink" title="Modules脚本示例"></a>Modules脚本示例</h1><ul>
+<li>以Cmake3.15.3为例：</li>
+</ul>
+<blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat ~/privatemodules/cmake-3.15.3</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">%Module1.0<span class="comment">#####################################################################</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># modules modulefile</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">module-whatis	"Cmake-3.15.3"</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">prepend-path	PATH	/home/lyh/MDT/software/cmake/bin</span></pre></td></tr></table></figure></blockquote>
+
+      
+
+
+        
+        
+          <div>
+            <blockquote>
+                <strong>本文作者：</strong>
+                
+                  lyh
+                
+                <br>
+                <strong>本文链接：</strong>
+                https://lu-git.github.io/2019/12/06/environment-modules/
+                <br>
+                <strong>版权声明：</strong>
+                本作品采用
+                <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+                进行许可。转载请注明出处！
+                
+                  <br>
+                  <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a>
+                
+            </blockquote>
+            
+            
+            <hr>
+                <center><strong>乐于分享,专注互联网生活.</strong></center>
+            <hr>
+          </div>
+        
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃辣条<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/lu-git/lu-git.github.io/master/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/lu-git/lu-git.github.io/master/img/weixinpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -186,96 +315,138 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lu-git.github.io/2019/12/06/environment-modules/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/05/amber18_install/" class="archive-article-date">
-  	<time datetime="2019-12-05T14:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/05/amber18_install/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CentOS7编译安装Amber18</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/05/amber18_install/">CentOS7编译安装Amber18</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">软件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Modules简介"><span class="toc-number">1.</span> <span class="toc-text">Modules简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Modules安装"><span class="toc-number">2.</span> <span class="toc-text">Modules安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Modules使用"><span class="toc-number">3.</span> <span class="toc-text">Modules使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Modules脚本示例"><span class="toc-number">4.</span> <span class="toc-text">Modules脚本示例</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/05/cmake_install/" class="archive-article-date">
-  	<time datetime="2019-12-05T03:32:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/05/cmake_install/">CentOS 7.5 编译安装CMake-3.15.3</a>
-    </h1>
-  
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">软件</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
     
 
+  
+
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<script src="https://billts.site/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "environment modul 配置",
+  owner: 'lu-git',
+  repo: 'blog-comment',
+  oauth: {
+    client_id: '9cd86ab140b705ecddad',
+    client_secret: '2e136e83c68069c5d9e2b3038f5bc02d9eb667f0',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+
+  
 
 
           </div>
@@ -298,8 +469,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
