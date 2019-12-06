@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://github.com/lu-git">
   <title>CentOS7编译安装Amber18 | 卢记杂货店</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Amber18下载">
+  <meta name="description" content="Amber简介Amber（Assisted Model Building with Energy Refinement）这个名词通常涉及两个产品：一个是一套生物分子模拟的分子立场；另一个是由TSRI&amp;amp;UCSF发布的包含代码和演示的分子模拟软件包，由AmberTools和Amber组成，Amber是一个多个程序的集合包，大约包含50多个程序，相互协调工作。">
 <meta name="keywords" content="软件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS7编译安装Amber18">
 <meta property="og:url" content="https:&#x2F;&#x2F;github.com&#x2F;lu-git&#x2F;2019&#x2F;12&#x2F;05&#x2F;amber18_install&#x2F;index.html">
 <meta property="og:site_name" content="卢记杂货店">
-<meta property="og:description" content="Amber18下载">
+<meta property="og:description" content="Amber简介Amber（Assisted Model Building with Energy Refinement）这个名词通常涉及两个产品：一个是一套生物分子模拟的分子立场；另一个是由TSRI&amp;amp;UCSF发布的包含代码和演示的分子模拟软件包，由AmberTools和Amber组成，Amber是一个多个程序的集合包，大约包含50多个程序，相互协调工作。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-05T15:57:41.971Z">
+<meta property="og:updated_time" content="2019-12-06T01:33:56.387Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="卢记杂货店" type="application/atom+xml">
@@ -64,7 +64,7 @@
 		</nav>
 		<nav>
 			<a>总文章数 2</a>
-			<a>总字数 <span class="post-count">794</span></a>
+			<a>总字数 <span class="post-count">1.5k</span></a>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -167,9 +167,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Amber18下载"><a href="#Amber18下载" class="headerlink" title="Amber18下载"></a>Amber18下载</h1><a id="more"></a>
+        <h1 id="Amber简介"><a href="#Amber简介" class="headerlink" title="Amber简介"></a>Amber简介</h1><p>Amber（Assisted Model Building with Energy Refinement）这个名词通常涉及两个产品：一个是一套生物分子模拟的分子立场；另一个是由TSRI&amp;UCSF发布的包含代码和演示的分子模拟软件包，由AmberTools和Amber组成，Amber是一个多个程序的集合包，大约包含50多个程序，相互协调工作。</p>
+<a id="more"></a>
 
-<ul>
+<p>主要的程序有：</p>
+<p>sander：Simulated annealing with NMR-derived energy restraints，用来自NMR的能量限制模拟退火。可以基于来自NOE的距离限制和扭转角限制、基于化学位移和NOESY值的性能损失函数，进行NMR的精细化。Sander也是用于分子动力学模拟的主程序，并且支持QM/MM(量化/动力学)运算。<br>       nmode：使用一阶和二阶导数信息进行简正模式分析的程序，用于寻找局域最小值，进行振动分析，寻找过渡态。<br>       LEaP：X-window程序，用于基本模型，AMBER坐标和参数/拓扑文件的创建。它包含分子编辑器，可以创建氨基酸残基并对大分子进行修饰。<br>       antechamber：该程序套件对大多数有机分子和金属配位中心自动产生力场描述。它从结构开始（通常是PDB格式），产生LEaP可识别的文件用于分子模拟。要求对蛋白质和核酸产生的力场与通常的Amber力场一致，另外还可以和高斯兼容，生成高斯计算的输入文件用于量化计算。<br>       ptraj和carnal：用于分析MD轨迹，计算参考结构的RMS偏差，氢键分析，时间相关函数，扩散特性，等。<br>       mm_pbsa：脚本，对MD轨迹自动后期处理，用连续溶剂方法进行热力学分析。它能够把能量归属到不同的氨基酸残基片断中去，并估算不同构像之间的自由能量差。<br>       pmemd：这是一个在sander基础上进行重大修改的程序（最初由Bob Duke发起），用于优化周期性、PME模拟以及GB模拟过程。新版本Pmemd的计算速度要比Sander快，而且更适用于并行。此外，11版新增NVIDIA GPU加速，因此，它通常是一可选程序，除非你需要的选项它不支持。在新版模型中，我们可以理解为：sander是研究新的性质的有效手段，pmemd如同“生产”的代码，是实现Sander最常用的一个行之有效的工具，在高性能环境中表现良好。<br>       ptraj：这是用来分析MD轨迹，计算的各种数据，如：相关结构的均方根偏差，氢键分析，时间相关函数，扩散行为等等。</p>
+<h1 id="Amber18下载"><a href="#Amber18下载" class="headerlink" title="Amber18下载"></a>Amber18下载</h1><ul>
 <li><a href="链接：https://pan.baidu.com/s/19PsOzzC_qWQ6NYonEwWvzQ">Amber18.tar.bz2</a><code>提取码：gecf</code></li>
 <li><a href="链接：https://pan.baidu.com/s/1_lAYXtoZROdlJKZDCC-xMg">AmberTools19.tar.bz2</a><code>提取码：knaz</code></li>
 </ul>
@@ -192,7 +195,7 @@
 </blockquote>
 </li>
 <li><p>多线程(openmpi)编译安装：</p>
-<p>安装openmpi以及配置环境变量的过程此处不再赘述。</p>
+<p>安装openmpi以及配置环境变量的过程此处不再赘述。<br><a href="链接：https://pan.baidu.com/s/1oVlFNCOAeZCEhliJVJcBog">openmpi-4.0.1 百度网盘下载地址</a><code>提取码：ai53</code></p>
 <blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ cd $AMBERHOME</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ .&#x2F;configure --with-python $&#123;Python执行路径&#125; -mpi gnu</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"># 此命令会生成处amber.sh和amber.csh文件，这两个文件可以用于添加amber所需的环境变量</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$ source amber.sh # 添加环境变量信息，也可以自己动手在~&#x2F;.bashrc中添加</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">$ make install # 编译安装</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">$ export DO_PARALLEL&#x3D;&quot;mpirun --allow-run-as-root -np 4&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"># openmpi2.0以后的版本，用户是root的话，mpirun并行运行的话不会计算，须加上--allow-run-as-root</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">$ .&#x2F;configure --with-python $&#123;Python执行路径&#125; -openmp gnu</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">$ make openmp</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">$ make test # 编译测试</span></pre></td></tr></table></figure>
 </blockquote>
@@ -382,7 +385,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Amber18下载"><span class="toc-number">1.</span> <span class="toc-text">Amber18下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Amber18编译安装"><span class="toc-number">2.</span> <span class="toc-text">Amber18编译安装</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Amber简介"><span class="toc-number">1.</span> <span class="toc-text">Amber简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Amber18下载"><span class="toc-number">2.</span> <span class="toc-text">Amber18下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Amber18编译安装"><span class="toc-number">3.</span> <span class="toc-text">Amber18编译安装</span></a></li></ol>
                     </div>
                 </span>
             </div>
