@@ -374,26 +374,6 @@
 
   
 
-  
-  <!-- 来必力City版安装代码 -->
-<div id="lv-container" data-id="city" data-uid="">
-	<script type="text/javascript">
-   (function(d, s) {
-       var j, e = d.getElementsByTagName(s)[0];
-
-       if (typeof LivereTower === 'function') { return; }
-
-       j = d.createElement(s);
-       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-       j.async = true;
-
-       e.parentNode.insertBefore(j, e);
-   })(document, 'script');
-	</script>
-<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-</div>
-<!-- City版安装代码已完成 -->
-
     
 
   
@@ -402,6 +382,22 @@
 
   
 
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "https://lu-git.github.io/2019/12/05/cmake_install/",
+  owner: 'lu-git',
+  repo: 'lu-git.github.io',
+  oauth: {
+    client_id: '9cd86ab140b705ecddad',
+    client_secret: '2e136e83c68069c5d9e2b3038f5bc02d9eb667f0',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
   
 
 
