@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lu-git.github.io">
-  <title>Archives | 卢记杂货店</title>
+  <title>PBS作业调度系统 | 卢记杂货店</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="与我常在">
-<meta property="og:type" content="website">
-<meta property="og:title" content="卢记杂货店">
-<meta property="og:url" content="https:&#x2F;&#x2F;lu-git.github.io&#x2F;archives&#x2F;index.html">
+  <meta name="description" content="PBS简介 PBS （Protable Batch System） 作业调度系统会根据一个集群上的可用计算节点的计算资源来调度计算作业（无论是批处理作业还是交互式作业）。">
+<meta name="keywords" content="PBS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PBS作业调度系统">
+<meta property="og:url" content="https:&#x2F;&#x2F;lu-git.github.io&#x2F;2019&#x2F;12&#x2F;10&#x2F;PBS_system&#x2F;index.html">
 <meta property="og:site_name" content="卢记杂货店">
-<meta property="og:description" content="与我常在">
+<meta property="og:description" content="PBS简介 PBS （Protable Batch System） 作业调度系统会根据一个集群上的可用计算节点的计算资源来调度计算作业（无论是批处理作业还是交互式作业）。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-10T08:51:26.680Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="卢记杂货店" type="application/atom+xml">
@@ -145,36 +147,282 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-PBS_system" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/10/PBS_system/" class="archive-article-date">
-  	<time datetime="2019-12-10T06:35:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-10</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/10/PBS_system/">PBS作业调度系统</a>
+    <h1 class="article-title" itemprop="name">
+      PBS作业调度系统
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/12/10/PBS_system/" class="archive-article-date">
+  	<time datetime="2019-12-10T06:35:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h1 id="PBS简介"><a href="#PBS简介" class="headerlink" title="PBS简介"></a>PBS简介</h1><ul>
+<li>PBS （Protable Batch System） 作业调度系统会根据一个集群上的可用计算节点的计算资源来调度计算作业（无论是批处理作业还是交互式作业）。</li>
+</ul>
+<a id="more"></a>
+
+<h1 id="PBS常用命令"><a href="#PBS常用命令" class="headerlink" title="PBS常用命令"></a>PBS常用命令</h1><blockquote>
+<ul>
+<li>qsub: 提交作业</li>
+<li>qdel:取消作业</li>
+<li>qsig: 给作业发送信号</li>
+<li>qhold: 挂起作业</li>
+<li>qrls: 释放挂起的作业</li>
+<li>qrerun: 重新运行作业</li>
+<li>qmove: 将作业移动到另一个队列</li>
+<li>qalter: 更改作业资源属性</li>
+</ul>
+</blockquote>
+<hr>
+<h1 id="作业监测"><a href="#作业监测" class="headerlink" title="作业监测"></a>作业监测</h1><blockquote>
+<ul>
+<li><p>qstat: 显示作业状态</p>
+<blockquote>
+<blockquote>
+<ul>
+<li>qstat -q 显示已经配置的所有节点池状态信息</li>
+<li>qstat -a 显示已经提交的作业状态信息</li>
+<li>qstat -f JOBID 显示指定作业的所有状态信息</li>
+</ul>
+</blockquote>
+</blockquote>
+</li>
+<li><p>showq: 查看所有作业</p>
+</li>
+</ul>
+</blockquote>
+<hr>
+<h1 id="节点状态"><a href="#节点状态" class="headerlink" title="节点状态"></a>节点状态</h1><ul>
+<li>pbsnodes: 列出集群包含的所有节点的状态和属性</li>
+</ul>
+<hr>
+<h1 id="PBS作业属性"><a href="#PBS作业属性" class="headerlink" title="PBS作业属性"></a>PBS作业属性</h1><ul>
+<li>使用命令行的方式把参数传递给qsub命令</li>
+<li>编写PBS脚本，以#PBS方式指定</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">属性</th>
+<th align="center">取值</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">-l</td>
+<td align="center">以:分隔的资源信息</td>
+<td align="center">设定作业所需资源</td>
+</tr>
+<tr>
+<td align="center">-N</td>
+<td align="center">作业名称</td>
+<td align="center">设定作业名称</td>
+</tr>
+<tr>
+<td align="center">-o</td>
+<td align="center">文件路径</td>
+<td align="center">设定作业的标准输出文件路径</td>
+</tr>
+<tr>
+<td align="center">-e</td>
+<td align="center">文件路径</td>
+<td align="center">设定作业的标准错误文件路径</td>
+</tr>
+<tr>
+<td align="center">-q</td>
+<td align="center">队列名称</td>
+<td align="center">设定作业队列名称</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">资源</th>
+<th align="center">取值</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">nodes</td>
+<td align="center">正整数</td>
+<td align="center">设定作业所需计算节点资源</td>
+</tr>
+<tr>
+<td align="center">walltime</td>
+<td align="center">hh:mm:ss</td>
+<td align="center">设定作业所需的最大wallclock时间</td>
+</tr>
+<tr>
+<td align="center">cput</td>
+<td align="center">hh:mm:ss</td>
+<td align="center">设定作业所需的最大CPU时间</td>
+</tr>
+<tr>
+<td align="center">mem</td>
+<td align="center">正整数，后面可跟b,kb,mb,gb</td>
+<td align="center">设定作业所需的最大内存</td>
+</tr>
+<tr>
+<td align="center">ppn</td>
+<td align="center">正整数</td>
+<td align="center">设定作业所需的CPU数目</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>nodes=<num nodes> 设定所需节点数</p>
+<p>nodes=<num nodes>:ppn=<num procs per node> 设定所需节点数和每个节点上使用的处理器数目</p>
+<p>nodes=&lt;list of node names separated by ‘+’&gt; 设定所要使用的节点</p>
+</blockquote>
+<hr>
+<h1 id="PBS环境变量"><a href="#PBS环境变量" class="headerlink" title="PBS环境变量"></a>PBS环境变量</h1><table>
+<thead>
+<tr>
+<th align="center">环境变量</th>
+<th align="center">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">PBS_ENVIRONMENT</td>
+<td align="center">批处理作业为PBS_BATCH，交互式作业为PBS_INTERACTIVE</td>
+</tr>
+<tr>
+<td align="center">PBS_JOBID</td>
+<td align="center">PBS系统给作业分配的标识号</td>
+</tr>
+<tr>
+<td align="center">PBS_JOBNAME</td>
+<td align="center">用户指定的作业名称</td>
+</tr>
+<tr>
+<td align="center">PBS_NODEFILE</td>
+<td align="center">包含作业所用计算节点的文件名</td>
+</tr>
+<tr>
+<td align="center">PBS_QUEUE</td>
+<td align="center">作业所执行的队列名称</td>
+</tr>
+<tr>
+<td align="center">PBS_O_HOME</td>
+<td align="center">执行qsub命令的HOME环境变量值</td>
+</tr>
+<tr>
+<td align="center">PBS_O_PATH</td>
+<td align="center">执行qsub命令的PATH环境变量值</td>
+</tr>
+<tr>
+<td align="center">PBS_O_SHELL</td>
+<td align="center">执行qsub命令的SHELL环境变量值</td>
+</tr>
+<tr>
+<td align="center">PBS_O_HOST</td>
+<td align="center">执行qsub命令节点名称</td>
+</tr>
+<tr>
+<td align="center">PBS_O_WORKDIR</td>
+<td align="center">执行qsub命令所在的绝对路径</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="提交批处理作业"><a href="#提交批处理作业" class="headerlink" title="提交批处理作业"></a>提交批处理作业</h1><blockquote>
+<p>命令行提交批处理作业：<code>$ qsub [options] &lt;control script&gt;</code></p>
+</blockquote>
+<blockquote>
+<p>作业提交后一般会先排队等待，PBS系统会根据作业的优先级和可用的计算资源来调度和执行作业</p>
+</blockquote>
+<blockquote>
+<p>PBS脚本本质上是一个Linux shell脚本，在PBS脚本中可以用一种特殊形式的注释（#PBS）作为PBS指令以设定作业属性。</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> file: example.pbs</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##set job name</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">PBS -N NAME</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##set output files</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">PBS -o name.o</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">PBS -e name.e</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##set queue name</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">PBS -q queuename</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##set number of nodes</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">PBS -l nodes=2:ppn=4</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> enter job<span class="string">'s working directory</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">cd $PBS_O_WORKDIR</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> get the number of processors</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">NP=`cat $PBS_NODEFILE | wc -l`</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> run an example job</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">mpirun -np $NP -machinefile $PBS_NODEFILE &lt;executable&gt; &lt;input file&gt;</span></pre></td></tr></table></figure>
+
+<p>编写好PBS脚本之后使用<code>$ qsub example.pbs</code>提交该作业</p>
+<hr>
+<h1 id="取消排队中的作业"><a href="#取消排队中的作业" class="headerlink" title="取消排队中的作业"></a>取消排队中的作业</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ qdel &lt;job ID&gt;</span></pre></td></tr></table></figure>
+
+<h1 id="停止正在运行的作业"><a href="#停止正在运行的作业" class="headerlink" title="停止正在运行的作业"></a>停止正在运行的作业</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ qsig -s KILL &lt;job ID&gt;</span></pre></td></tr></table></figure>
+
+
+
+
+      
+
+
+        
+        
+          <div>
+            <blockquote>
+                <strong>本文作者：</strong>
+                
+                  lyh
+                
+                <br>
+                <strong>本文链接：</strong>
+                https://lu-git.github.io/2019/12/10/PBS_system/
+                <br>
+                <strong>版权声明：</strong>
+                本作品采用
+                <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+                进行许可。转载请注明出处！
+                
+                  <br>
+                  <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"/></a>
+                
+            </blockquote>
+            
+            
+            <hr>
+                <center><strong>乐于分享,专注互联网生活.</strong></center>
+            <hr>
+          </div>
+        
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃辣条<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/lu-git/lu-git.github.io/master/img/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/lu-git/lu-git.github.io/master/img/weixinpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -186,172 +434,138 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lu-git.github.io/2019/12/10/PBS_system/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/09/DNS_setup/" class="archive-article-date">
-  	<time datetime="2019-12-09T06:13:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/12/09/DNS_setup/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">搭建DNS服务器</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/09/DNS_setup/">搭建DNS服务器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">DNS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PBS简介"><span class="toc-number">1.</span> <span class="toc-text">PBS简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PBS常用命令"><span class="toc-number">2.</span> <span class="toc-text">PBS常用命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#作业监测"><span class="toc-number">3.</span> <span class="toc-text">作业监测</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#节点状态"><span class="toc-number">4.</span> <span class="toc-text">节点状态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PBS作业属性"><span class="toc-number">5.</span> <span class="toc-text">PBS作业属性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PBS环境变量"><span class="toc-number">6.</span> <span class="toc-text">PBS环境变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#提交批处理作业"><span class="toc-number">7.</span> <span class="toc-text">提交批处理作业</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#取消排队中的作业"><span class="toc-number">8.</span> <span class="toc-text">取消排队中的作业</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#停止正在运行的作业"><span class="toc-number">9.</span> <span class="toc-text">停止正在运行的作业</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/06/environment-modules/" class="archive-article-date">
-  	<time datetime="2019-12-06T07:17:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/06/environment-modules/">environment modul 配置</a>
-    </h1>
-  
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/05/amber18_install/" class="archive-article-date">
-  	<time datetime="2019-12-05T14:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/05/amber18_install/">CentOS7编译安装Amber18</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">软件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/05/cmake_install/" class="archive-article-date">
-  	<time datetime="2019-12-05T03:32:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/05/cmake_install/">CentOS 7.5 编译安装CMake-3.15.3</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">软件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
     
 
+  
+
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<script src="https://billts.site/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "PBS作业调度系统",
+  owner: 'lu-git',
+  repo: 'blog-comment',
+  oauth: {
+    client_id: '9cd86ab140b705ecddad',
+    client_secret: '2e136e83c68069c5d9e2b3038f5bc02d9eb667f0',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+
+  
 
 
           </div>
@@ -374,8 +588,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
