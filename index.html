@@ -61,8 +61,8 @@
 			</ul>
 		</nav>
 		<nav>
-			<a>总文章数 5</a>
-			<a>总字数 <span class="post-count">4.5k</span></a>
+			<a>总文章数 6</a>
+			<a>总字数 <span class="post-count">4.7k</span></a>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -146,6 +146,91 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-centos GCC 8. 3.0 install" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/28/centos%20GCC%208.%203.0%20install/">centos GCC 8. 3.0 install</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/28/centos%20GCC%208.%203.0%20install/" class="archive-article-date">
+  	<time datetime="2020-05-28T11:48:12.011Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="centos-GCC-8-3-0-编译安装"><a href="#centos-GCC-8-3-0-编译安装" class="headerlink" title="centos GCC 8. 3.0 编译安装"></a>centos GCC 8. 3.0 编译安装</h1><p><a href="http://ftp.gnu.org/gnu/gcc/" target="_blank" rel="noopener">gcc官方网站</a></p>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wget http://ftp.gnu.org/gnu/gcc/gcc-8.3.0/gcc-8.3.0.tar.xz</span></pre></td></tr></table></figure>
+
+<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">tar xJvf gcc-8.3.0.tar.xz</span></pre></td></tr></table></figure>
+
+<h2 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd gcc-8.3.0.tar.xz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">./contrib/download_prerequisites #下载依赖包</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">mkdir build</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">mkdir $HOME/gcc-8.3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">cd build</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">../configure --prefix=$HOME/gcc-8.3 --enable-checking=release --enable-languages=c,c++ --disable-multilib</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">make -j 4</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">make -j 4 install</span></pre></td></tr></table></figure>
+
+<h2 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">echo '###gcc-8.3.0' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">echo 'export PATH=$HOME/gcc-8.3/bin:$PATH' &gt;&gt; ~/.bashrc #$HOME根据实际情况修改</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">echo 'export LD_LIBRARY_PATH=$HOME/gcc-8.3/lib64:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc #$HOME根据实际情况修改</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span></pre></td></tr></table></figure>
+
+<h2 id="查看版本信息"><a href="#查看版本信息" class="headerlink" title="查看版本信息"></a>查看版本信息</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">gcc --version</span></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+      
+
+
+        
+        
+          <div hidden="hidden"></div>
+        
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/28/centos%20GCC%208.%203.0%20install/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-PBS_system" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -638,15 +723,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">PBS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">软件</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">PBS</a>
               </li>
             
             <div class="clearfix"></div>
