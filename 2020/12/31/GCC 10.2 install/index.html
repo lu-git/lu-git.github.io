@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lu-git.github.io">
-  <title>CentOS 7.5 编译安装CMake-3.15.3 | 卢记杂货店</title>
+  <title>CentOS7编译安装GCC 10.2 | 卢记杂货店</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="cmake简介   cmake是一个跨平台的安装（编译）工具，可以用简单的语句来描述所有平台的安装（编译过程）。">
-<meta name="keywords" content="软件">
+  <meta name="description" content="GCC 10.2 install​    Linux系统会预装GCC，但是出于稳定性和兼容性的考虑，预装的GCC版本都是较低的稳定版，而有些软件的新版本安装编译时需要较高版本的GCC，对于普通用户来说，就需要在自己的目录下安装所需版本的GCC了。此文中的路径需要自行更改。">
+<meta name="keywords" content="gcc,编译器">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CentOS 7.5 编译安装CMake-3.15.3">
-<meta property="og:url" content="https:&#x2F;&#x2F;lu-git.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;cmake_install&#x2F;index.html">
+<meta property="og:title" content="CentOS7编译安装GCC 10.2">
+<meta property="og:url" content="https:&#x2F;&#x2F;lu-git.github.io&#x2F;2020&#x2F;12&#x2F;31&#x2F;GCC%2010.2%20install&#x2F;index.html">
 <meta property="og:site_name" content="卢记杂货店">
-<meta property="og:description" content="cmake简介   cmake是一个跨平台的安装（编译）工具，可以用简单的语句来描述所有平台的安装（编译过程）。">
+<meta property="og:description" content="GCC 10.2 install​    Linux系统会预装GCC，但是出于稳定性和兼容性的考虑，预装的GCC版本都是较低的稳定版，而有些软件的新版本安装编译时需要较高版本的GCC，对于普通用户来说，就需要在自己的目录下安装所需版本的GCC了。此文中的路径需要自行更改。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-09T07:33:17.000Z">
+<meta property="og:updated_time" content="2020-12-31T00:24:39.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="卢记杂货店" type="application/atom+xml">
@@ -147,42 +147,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-cmake_install" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-GCC 10.2 install" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      CentOS 7.5 编译安装CMake-3.15.3
+      CentOS7编译安装GCC 10.2
     </h1>
   
 
         
-        <a href="/2019/12/05/cmake_install/" class="archive-article-date">
-  	<time datetime="2019-12-05T03:32:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
+        <a href="/2020/12/31/GCC%2010.2%20install/" class="archive-article-date">
+  	<time datetime="2020-12-31T00:20:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-31</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="cmake简介"><a href="#cmake简介" class="headerlink" title="cmake简介"></a>cmake简介</h1><p>   cmake是一个跨平台的安装（编译）工具，可以用简单的语句来描述所有平台的安装（编译过程）。</p>
+        <h1 id="GCC-10-2-install"><a href="#GCC-10-2-install" class="headerlink" title="GCC 10.2 install"></a>GCC 10.2 install</h1><p>​    Linux系统会预装GCC，但是出于稳定性和兼容性的考虑，预装的GCC版本都是较低的稳定版，而有些软件的新版本安装编译时需要较高版本的GCC，对于普通用户来说，就需要在自己的目录下安装所需版本的GCC了。<code>此文中的路径需要自行更改。</code></p>
+<hr>
 <a id="more"></a>
 
-<h1 id="cmake下载"><a href="#cmake下载" class="headerlink" title="cmake下载"></a>cmake下载</h1><p>   <a href="https://cmake.org/" target="_blank" rel="noopener">cmake官方网址</a></p>
-<p>   <a href="https://pan.baidu.com/s/1JemZdFcKtmfJQnUFlxxKPg" target="_blank" rel="noopener">cmake网盘下载地址</a> 提取码：6nok</p>
-<h1 id="cmake编译安装"><a href="#cmake编译安装" class="headerlink" title="cmake编译安装"></a>cmake编译安装</h1><p>   安装之前要确保已经安装的有<code>gcc</code>、<code>g++</code>。</p>
-<p>   下为实际安装过程，路径设置请根据各自所需。</p>
-<p>   下载完毕后上传到服务器上，压缩包上传路径为<code>/home/lyh/MDT/package/</code>，安装路径为<code>/home/lyh/MDT/software</code>。</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ cd ~&#x2F;MDT&#x2F;package&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ tar -zxvf cmake-3.15.3.tar.gz -C ..&#x2F;software&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$ cd ..&#x2F;software&#x2F;cmake-3.15.3&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$ .&#x2F;bootstrap --prefix&#x3D;&#x2F;home&#x2F;lyh&#x2F;MDT&#x2F;software&#x2F;cmale</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">$ gmake</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">$ gmake install</span></pre></td></tr></table></figure>
+<h2 id="依赖包安装"><a href="#依赖包安装" class="headerlink" title="依赖包安装"></a>依赖包安装</h2><h3 id="gmp编译"><a href="#gmp编译" class="headerlink" title="gmp编译"></a>gmp编译</h3><p>​    此处提供百度网盘下载链接<a href="https://pan.baidu.com/s/1kFV_tkyup9euDNJyhbudcw" target="_blank" rel="noopener">gmp-6.2.0</a>，提取码<code>g5lh</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">tar -vxf gmp-6.2.0.tar.bz2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">cd gmp-6.2.0/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">./configure --prefix=/home/luyh/software/gmp</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">make</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">make install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">echo 'export LD_LIBRARY_PATH=/home/luyh/software/gmp/lib:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span></pre></td></tr></table></figure>
 
-<p>   查看所安装的文件位置信息</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ more install_mainfest.txt</span></pre></td></tr></table></figure>
+<h3 id="mpfr编译"><a href="#mpfr编译" class="headerlink" title="mpfr编译"></a>mpfr编译</h3><p>​    此处提供百度网盘下载链接<a href="https://pan.baidu.com/s/1lXWtHTZxb8lBH93CvTLmGQ" target="_blank" rel="noopener">mpfr-4.1.0</a>，提取码<code>0bh4</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">tar -vxf mpfr-4.1.0.tar.xz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">cd mpfr-4.1.0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">./configure --prefix=/home/luyh/software/mpfr --with-gmp=/home/luyh/software/gmp</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">make</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">make install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">echo 'export LD_LIBRARY_PATH=/home/luyh/software/mpfr/lib:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span></pre></td></tr></table></figure>
 
-<p>   添加环境变量</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ echo &quot;export PATH&#x3D;&#x2F;home&#x2F;lyh&#x2F;MDT&#x2F;software&#x2F;cmake&#x2F;bin:$PATH&quot; &gt;&gt; ~&#x2F;.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ source ~&#x2F;.bashrc</span></pre></td></tr></table></figure>
+<h3 id="mpc编译"><a href="#mpc编译" class="headerlink" title="mpc编译"></a>mpc编译</h3><p>​    此处提供百度网盘下载链接<a href="https://pan.baidu.com/s/1QzOgRC9fdILD95hOsn53Nw" target="_blank" rel="noopener">mpc-1.1.0</a>，提取码<code>9wiy</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">tar -vxf mpc-1.1.0.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">cd mpc-1.1.0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">./configure --prefix=/home/luyh/software/mpc --with-gmp=/home/luyh/software/gmp --with-mpfr=/home/luyh/software/mpfr</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">make</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">make install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">echo 'export LD_LIBRARY_PATH=/home/luyh/software/mpc/lib:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span></pre></td></tr></table></figure>
 
+<h2 id="GCC安装"><a href="#GCC安装" class="headerlink" title="GCC安装"></a>GCC安装</h2><p>​    此处提供百度网盘下载链接<a href="https://pan.baidu.com/s/1FGm9WVjb8oIT3Pz8riZ4Jg" target="_blank" rel="noopener">gcc-10.2.0</a>，提取码<code>skvd</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">tar -xvf gcc-10.2.0.tar.xz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">cd gcc-10.2.0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">mkdir build</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">cd build</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">unset LIBRARY_PATH CPATH C_INCLUDE_PATH PKG_CONFIG_PATH CPLUS_INCLUDE_PATH INCLUDE</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">../configure --prefix=/home/luyh/software/gcc-10.2.0 --enable-checking=release --enable-stage1-languages=all --disable-multilib --with-gmp-include=/home/luyh/software/gmp/include --with-gmp-lib=/home/luyh/software/gmp/lib --with-mpfr-include=/home/luyh/software/mpfr/include --with-mpfr-lib=/home/luyh/software/mpfr/lib --with-mpc-include=/home/luyh/software/mpc/include --with-mpc-lib=/home/luyh/software/mpc/lib</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">make</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">make install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">echo '### gcc 10.2' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">echo 'export PATH=/home/luyh/software/gcc-10.2.0/bin:$PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">echo 'export LD_LIBRARY_PATH=/home/luyh/software/gcc-10.2.0/lib64:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span></pre></td></tr></table></figure>
 
 
       
@@ -203,7 +202,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">软件</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">gcc</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">编译器</a>
         		</li>
       		
 		</ul>
@@ -259,7 +262,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://lu-git.github.io/2019/12/05/cmake_install/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lu-git.github.io/2020/12/31/GCC%2010.2%20install/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -273,15 +276,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/05/amber18_install/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/12/31/JDFTx%20%E5%AE%89%E8%A3%85/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CentOS7编译安装Amber18
+          CentOS7编译安装JDFTx
         
       </div>
     </a>
   
+  
+    <a href="/2020/05/28/centos%20GCC%208.%203.0%20install/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CentOS编译安装gcc-8.3.0</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -306,7 +314,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#cmake简介"><span class="toc-number">1.</span> <span class="toc-text">cmake简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cmake下载"><span class="toc-number">2.</span> <span class="toc-text">cmake下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cmake编译安装"><span class="toc-number">3.</span> <span class="toc-text">cmake编译安装</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GCC-10-2-install"><span class="toc-number">1.</span> <span class="toc-text">GCC 10.2 install</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖包安装"><span class="toc-number">1.1.</span> <span class="toc-text">依赖包安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gmp编译"><span class="toc-number">1.1.1.</span> <span class="toc-text">gmp编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mpfr编译"><span class="toc-number">1.1.2.</span> <span class="toc-text">mpfr编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mpc编译"><span class="toc-number">1.1.3.</span> <span class="toc-text">mpc编译</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GCC安装"><span class="toc-number">1.2.</span> <span class="toc-text">GCC安装</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -333,7 +341,7 @@
 <script src="https://billts.site/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "CentOS 7.5 编译安装CMake-3.15.3",
+  id: "CentOS7编译安装GCC 10.2",
   owner: 'lu-git',
   repo: 'blog-comment',
   oauth: {
