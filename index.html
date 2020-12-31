@@ -167,21 +167,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-<h1 id="JDFTx-安装"><a href="#JDFTx-安装" class="headerlink" title="JDFTx 安装"></a>JDFTx 安装</h1><ul>
-<li>*<em>cmake、gcc和intel编译器安装步骤不再赘述。  *</em></li>
-</ul>
-<h2 id="gsl-安装"><a href="#gsl-安装" class="headerlink" title="gsl 安装"></a>gsl 安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wget http://mirrors.ustc.edu.cn/gnu/gsl/gsl-2.5.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">tar -xzvf gsl-2.5.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">cd gsl-2.5/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">./configure --prefix=/home/lyh/gsl</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">make -j 12</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">make -j 12 install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">echo 'export PATH=/home/lyh/libxc/bin:$PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">echo 'export LD_LIBRARY_PATH=/home/lyh/libxc/lib:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span></pre></td></tr></table></figure>
-
-<h2 id="libxc-安装"><a href="#libxc-安装" class="headerlink" title="libxc 安装"></a>libxc 安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wget http://www.tddft.org/programs/libxc/down.php?file=5.0.0/libxc-5.0.0.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">mv down.php\?file\=5.0.0%2Flibxc-5.0.0.tar.gz libxc-5.0.0.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">tar -zxvf libxc-5.0.0.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">./configure --prefix=/home/lyh/libxc --enable-shared</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">make -j 12</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">make check</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">make install -j 12 </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">echo 'export PATH=/home/lyh/libxc/bin:$PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">echo 'export LD_LIBRARY_PATH=/home/lyh/libxc/lib:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span></pre></td></tr></table></figure>
-
-<h2 id="fftw3-安装"><a href="#fftw3-安装" class="headerlink" title="fftw3 安装"></a>fftw3 安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wget ftp://ftp.fftw.org/pub/fftw/fftw-3.3.8.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">tar -zxvf fftw-3.3.8.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">mkdir fftw3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">cd fftw-3.3.8/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">./configure --enable-shared --prefix=/home/lyh/fftw3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">make -j 12</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">make -j 12 install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">make clean</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">./configure --enable-shared --enable-single --prefix=/home/lyh/fftw3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">make -j 12</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">make -j 12 install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">make clean</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">./configure --enable-shared --enable-long-double --prefix=/home/lyh/fftw3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">make -j 12</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">make -j 12 install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">make clean</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">./configure --enable-shared --enable-float --prefix=/home/lyh/fftw3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">make -j 12</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">make -j 12 install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">make clean</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">echo 'export PATH=/home/lyh/fftw3/bin:$PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">echo 'export PKG_CONFIG_PATH=/home/lyh/fftw3/lib/pkgconfig:$PKG_CONFIG_PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">echo 'export LD_LIBRARY_PATH=/home/lyh/fftw3/lib:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">echo 'export CBLAS_LIBRARY=/home/lyh/CBLAS/lib:$CBLAS_LIBRARY' &gt;&gt; ~/.bshrc</span></pre></td></tr></table></figure>
-
-<h2 id="blas-cblas-安装"><a href="#blas-cblas-安装" class="headerlink" title="blas cblas 安装"></a>blas cblas 安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wget http://www.netlib.org/blas/blas-3.8.0.tgz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">wget http://www.netlib.org/blas/blast-forum/cblas.tgz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">tar -zxvf blas-3.8.0.tgz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">tar -zxvf cblas.tgz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">cd BLAS-3.8.0/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">gcc -shared -fPIC -O3 *.f</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">ar rv libblas.a *.o</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">cd ../CBLAS/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">cp ../BLAS-3.8.0/libblas.a testing/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">mv Makefile.in Makefile.in_bak</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">ln -s Makefile.LINUX Makefile.in</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">vim Makefile.in</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##修改</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">CFLAGS = -fPIC -O3 -DADD_</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">FFLAGS = -fPIC -O3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##添加 -fPIC 参数</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">make</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##会生成lib文件夹</span></span></span></pre></td></tr></table></figure>
-
-<h2 id="jdftx-安装"><a href="#jdftx-安装" class="headerlink" title="jdftx 安装"></a>jdftx 安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wget https://github.com/shankar1729/jdftx/archive/v1.6.0.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">tar -zxvf v1.6.0.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">cd jdftx-1.6.0/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">mkdir build</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">cd build</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">------</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##使用intel编译</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">CC=icc CXX= icpc cmake \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">-D EnableCUDA=no \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">-D GSL_PATH=/home/lyh/gsl \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">-D ForceFFTW=yes \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">-D FFTW3_PATH=/home/lyh/fftw3 \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">-D FFTW3_THREADS_LIBRARY=/home/lyh/fftw3/lib/libfftw3f.a \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">-D EnableLibXC=yes \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">-D LIBXC_PATH=/home/lyh/libxc \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">-D ThreadeBlas=yes \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">-D CBLAS_PATH=/home/lyh/CBLAS \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">-D CBLAS_LIBRARY=/home/lyh/CBLAS/lib/cblas_LINUX.a \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">../jdftx</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##使用gcc编译</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">CC=gcc CXX=g++ cmake \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">-D EnableCUDA=no \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">-D GSL_PATH=/home/lyh/gsl \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">-D ForceFFTW=yes \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">-D FFTW3_PATH=/home/lyh/fftw3 \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">-D FFTW3_THREADS_LIBRARY=/home/lyh/fftw3/lib/libfftw3f.a \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">-D EnableLibXC=yes \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">-D LIBXC_PATH=/home/lyh/libxc \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">-D CBLAS_PATH=/home/lyh/CBLAS \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">-D CBLAS_LIBRARY=/home/lyh/CBLAS/lib/cblas_LINUX.a \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">../jdftx</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">------</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line">make -j 12</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line">echo 'export PATH="/home/lyh/jdftx-1.6.0/build:/home/lyh/jdftx-1.6.0/jdftx/scripts:$PATH"' &gt;&gt; ~/.bashrc</span></pre></td></tr></table></figure>
-
+        <h1 id="JDFTx-安装"><a href="#JDFTx-安装" class="headerlink" title="JDFTx 安装"></a>JDFTx 安装</h1>
+        
       
 
 
@@ -260,23 +247,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-<h1 id="CentOS编译安装GCC-10-2"><a href="#CentOS编译安装GCC-10-2" class="headerlink" title="CentOS编译安装GCC 10.2"></a>CentOS编译安装GCC 10.2</h1><p>​    Linux系统会预装GCC，但是出于稳定性和兼容性的考虑，预装的GCC版本都是较低的稳定版，而有些软件的新版本安装编译时需要较高版本的GCC，对于普通用户来说，就需要在自己的目录下安装所需版本的GCC了。<code>此文中的路径需要自行更改。</code></p>
-<hr>
-<h2 id="依赖包安装"><a href="#依赖包安装" class="headerlink" title="依赖包安装"></a>依赖包安装</h2><h3 id="gmp编译"><a href="#gmp编译" class="headerlink" title="gmp编译"></a>gmp编译</h3><p>​    此处提供百度网盘下载链接<a href="https://pan.baidu.com/s/1kFV_tkyup9euDNJyhbudcw" target="_blank" rel="noopener">gmp-6.2.0</a>，提取码<code>g5lh</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">tar -vxf gmp-6.2.0.tar.bz2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">cd gmp-6.2.0/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">./configure --prefix=/home/luyh/software/gmp</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">make</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">make install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">echo 'export LD_LIBRARY_PATH=/home/luyh/software/gmp/lib:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span></pre></td></tr></table></figure>
-
-<h3 id="mpfr编译"><a href="#mpfr编译" class="headerlink" title="mpfr编译"></a>mpfr编译</h3><p>​    此处提供百度网盘下载链接<a href="https://pan.baidu.com/s/1lXWtHTZxb8lBH93CvTLmGQ" target="_blank" rel="noopener">mpfr-4.1.0</a>，提取码<code>0bh4</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">tar -vxf mpfr-4.1.0.tar.xz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">cd mpfr-4.1.0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">./configure --prefix=/home/luyh/software/mpfr --with-gmp=/home/luyh/software/gmp</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">make</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">make install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">echo 'export LD_LIBRARY_PATH=/home/luyh/software/mpfr/lib:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span></pre></td></tr></table></figure>
-
-<h3 id="mpc编译"><a href="#mpc编译" class="headerlink" title="mpc编译"></a>mpc编译</h3><p>​    此处提供百度网盘下载链接<a href="https://pan.baidu.com/s/1QzOgRC9fdILD95hOsn53Nw" target="_blank" rel="noopener">mpc-1.1.0</a>，提取码<code>9wiy</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">tar -vxf mpc-1.1.0.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">cd mpc-1.1.0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">./configure --prefix=/home/luyh/software/mpc --with-gmp=/home/luyh/software/gmp --with-mpfr=/home/luyh/software/mpfr</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">make</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">make install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">echo 'export LD_LIBRARY_PATH=/home/luyh/software/mpc/lib:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span></pre></td></tr></table></figure>
-
-<h2 id="GCC安装"><a href="#GCC安装" class="headerlink" title="GCC安装"></a>GCC安装</h2><p>​    此处提供百度网盘下载链接<a href="https://pan.baidu.com/s/1FGm9WVjb8oIT3Pz8riZ4Jg" target="_blank" rel="noopener">gcc-10.2.0</a>，提取码<code>skvd</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">tar -xvf gcc-10.2.0.tar.xz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">cd gcc-10.2.0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">mkdir build</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">cd build</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">unset LIBRARY_PATH CPATH C_INCLUDE_PATH PKG_CONFIG_PATH CPLUS_INCLUDE_PATH INCLUDE</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">../configure --prefix=/home/luyh/software/gcc-10.2.0 --enable-checking=release --enable-stage1-languages=all --disable-multilib --with-gmp-include=/home/luyh/software/gmp/include --with-gmp-lib=/home/luyh/software/gmp/lib --with-mpfr-include=/home/luyh/software/mpfr/include --with-mpfr-lib=/home/luyh/software/mpfr/lib --with-mpc-include=/home/luyh/software/mpc/include --with-mpc-lib=/home/luyh/software/mpc/lib</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">make</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">make install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">echo '### gcc 10.2' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">echo 'export PATH=/home/luyh/software/gcc-10.2.0/bin:$PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">echo 'export LD_LIBRARY_PATH=/home/luyh/software/gcc-10.2.0/lib64:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span></pre></td></tr></table></figure>
-
-
+        <h1 id="CentOS编译安装GCC-10-2"><a href="#CentOS编译安装GCC-10-2" class="headerlink" title="CentOS编译安装GCC 10.2"></a>CentOS编译安装GCC 10.2</h1>
+        
       
 
 
@@ -359,26 +331,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-<h1 id="CentOS-GCC-8-3-0-编译安装"><a href="#CentOS-GCC-8-3-0-编译安装" class="headerlink" title="CentOS GCC 8. 3.0 编译安装"></a>CentOS GCC 8. 3.0 编译安装</h1><p><a href="http://ftp.gnu.org/gnu/gcc/" target="_blank" rel="noopener">gcc官方网站</a></p>
-<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wget http://ftp.gnu.org/gnu/gcc/gcc-8.3.0/gcc-8.3.0.tar.xz</span></pre></td></tr></table></figure>
-
-<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">tar xJvf gcc-8.3.0.tar.xz</span></pre></td></tr></table></figure>
-
-<h2 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cd gcc-8.3.0.tar.xz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">./contrib/download_prerequisites #下载依赖包</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">mkdir build</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">mkdir $HOME/gcc-8.3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">cd build</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">../configure --prefix=$HOME/gcc-8.3 --enable-checking=release --enable-languages=c,c++ --disable-multilib</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">make -j 4</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">make -j 4 install</span></pre></td></tr></table></figure>
-
-<h2 id="设置环境变量"><a href="#设置环境变量" class="headerlink" title="设置环境变量"></a>设置环境变量</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">echo '###gcc-8.3.0' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">echo 'export PATH=$HOME/gcc-8.3/bin:$PATH' &gt;&gt; ~/.bashrc #$HOME根据实际情况修改</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">echo 'export LD_LIBRARY_PATH=$HOME/gcc-8.3/lib64:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc #$HOME根据实际情况修改</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span></pre></td></tr></table></figure>
-
-<h2 id="查看版本信息"><a href="#查看版本信息" class="headerlink" title="查看版本信息"></a>查看版本信息</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">gcc --version</span></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
+        <h1 id="CentOS-GCC-8-3-0-编译安装"><a href="#CentOS-GCC-8-3-0-编译安装" class="headerlink" title="CentOS GCC 8. 3.0 编译安装"></a>CentOS GCC 8. 3.0 编译安装</h1>
+        
       
 
 
@@ -461,191 +415,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-<h1 id="PBS简介"><a href="#PBS简介" class="headerlink" title="PBS简介"></a>PBS简介</h1><ul>
-<li>PBS （Protable Batch System） 作业调度系统会根据一个集群上的可用计算节点的计算资源来调度计算作业（无论是批处理作业还是交互式作业）。</li>
-</ul>
-<h1 id="PBS常用命令"><a href="#PBS常用命令" class="headerlink" title="PBS常用命令"></a>PBS常用命令</h1><blockquote>
-<ul>
-<li>qsub: 提交作业</li>
-<li>qdel:取消作业</li>
-<li>qsig: 给作业发送信号</li>
-<li>qhold: 挂起作业</li>
-<li>qrls: 释放挂起的作业</li>
-<li>qrerun: 重新运行作业</li>
-<li>qmove: 将作业移动到另一个队列</li>
-<li>qalter: 更改作业资源属性</li>
-</ul>
-</blockquote>
-<hr>
-<h1 id="作业监测"><a href="#作业监测" class="headerlink" title="作业监测"></a>作业监测</h1><blockquote>
-<ul>
-<li>qstat: 显示作业状态</li>
-</ul>
-<blockquote>
-<ul>
-<li>qstat -q 显示已经配置的所有节点池状态信息</li>
-<li>qstat -a 显示已经提交的作业状态信息</li>
-<li>qstat -f JOBID 显示指定作业的所有状态信息</li>
-</ul>
-</blockquote>
-<ul>
-<li>showq: 查看所有作业</li>
-</ul>
-</blockquote>
-<hr>
-<h1 id="节点状态"><a href="#节点状态" class="headerlink" title="节点状态"></a>节点状态</h1><ul>
-<li>pbsnodes: 列出集群包含的所有节点的状态和属性</li>
-</ul>
-<hr>
-<h1 id="PBS作业属性"><a href="#PBS作业属性" class="headerlink" title="PBS作业属性"></a>PBS作业属性</h1><ul>
-<li>使用命令行的方式把参数传递给qsub命令</li>
-<li>编写PBS脚本，以#PBS方式指定</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">属性</th>
-<th align="center">取值</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">-l</td>
-<td align="center">以:分隔的资源信息</td>
-<td align="center">设定作业所需资源</td>
-</tr>
-<tr>
-<td align="center">-N</td>
-<td align="center">作业名称</td>
-<td align="center">设定作业名称</td>
-</tr>
-<tr>
-<td align="center">-o</td>
-<td align="center">文件路径</td>
-<td align="center">设定作业的标准输出文件路径</td>
-</tr>
-<tr>
-<td align="center">-e</td>
-<td align="center">文件路径</td>
-<td align="center">设定作业的标准错误文件路径</td>
-</tr>
-<tr>
-<td align="center">-q</td>
-<td align="center">队列名称</td>
-<td align="center">设定作业队列名称</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="center">资源</th>
-<th align="center">取值</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">nodes</td>
-<td align="center">正整数</td>
-<td align="center">设定作业所需计算节点资源</td>
-</tr>
-<tr>
-<td align="center">walltime</td>
-<td align="center">hh:mm:ss</td>
-<td align="center">设定作业所需的最大wallclock时间</td>
-</tr>
-<tr>
-<td align="center">cput</td>
-<td align="center">hh:mm:ss</td>
-<td align="center">设定作业所需的最大CPU时间</td>
-</tr>
-<tr>
-<td align="center">mem</td>
-<td align="center">正整数，后面可跟b,kb,mb,gb</td>
-<td align="center">设定作业所需的最大内存</td>
-</tr>
-<tr>
-<td align="center">ppn</td>
-<td align="center">正整数</td>
-<td align="center">设定作业所需的CPU数目</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>nodes=<num nodes> 设定所需节点数</p>
-<p>nodes=<num nodes>:ppn=<num procs per node> 设定所需节点数和每个节点上使用的处理器数目</p>
-<p>nodes=&lt;list of node names separated by ‘+’&gt; 设定所要使用的节点</p>
-</blockquote>
-<hr>
-<h1 id="PBS环境变量"><a href="#PBS环境变量" class="headerlink" title="PBS环境变量"></a>PBS环境变量</h1><table>
-<thead>
-<tr>
-<th align="center">环境变量</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">PBS_ENVIRONMENT</td>
-<td align="center">批处理作业为PBS_BATCH，交互式作业为PBS_INTERACTIVE</td>
-</tr>
-<tr>
-<td align="center">PBS_JOBID</td>
-<td align="center">PBS系统给作业分配的标识号</td>
-</tr>
-<tr>
-<td align="center">PBS_JOBNAME</td>
-<td align="center">用户指定的作业名称</td>
-</tr>
-<tr>
-<td align="center">PBS_NODEFILE</td>
-<td align="center">包含作业所用计算节点的文件名</td>
-</tr>
-<tr>
-<td align="center">PBS_QUEUE</td>
-<td align="center">作业所执行的队列名称</td>
-</tr>
-<tr>
-<td align="center">PBS_O_HOME</td>
-<td align="center">执行qsub命令的HOME环境变量值</td>
-</tr>
-<tr>
-<td align="center">PBS_O_PATH</td>
-<td align="center">执行qsub命令的PATH环境变量值</td>
-</tr>
-<tr>
-<td align="center">PBS_O_SHELL</td>
-<td align="center">执行qsub命令的SHELL环境变量值</td>
-</tr>
-<tr>
-<td align="center">PBS_O_HOST</td>
-<td align="center">执行qsub命令节点名称</td>
-</tr>
-<tr>
-<td align="center">PBS_O_WORKDIR</td>
-<td align="center">执行qsub命令所在的绝对路径</td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="提交批处理作业"><a href="#提交批处理作业" class="headerlink" title="提交批处理作业"></a>提交批处理作业</h1><blockquote>
-<p>命令行提交批处理作业：<code>$ qsub [options] &lt;control script&gt;</code></p>
-</blockquote>
-<blockquote>
-<p>作业提交后一般会先排队等待，PBS系统会根据作业的优先级和可用的计算资源来调度和执行作业</p>
-</blockquote>
-<blockquote>
-<p>PBS脚本本质上是一个Linux shell脚本，在PBS脚本中可以用一种特殊形式的注释（#PBS）作为PBS指令以设定作业属性。</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> file: example.pbs</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##set job name</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">PBS -N NAME</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##set output files</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">PBS -o name.o</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">PBS -e name.e</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##set queue name</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">PBS -q queuename</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##set number of nodes</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">PBS -l nodes=2:ppn=4</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> enter job<span class="string">'s working directory</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">cd $PBS_O_WORKDIR</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> get the number of processors</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">NP=`cat $PBS_NODEFILE | wc -l`</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> run an example job</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">mpirun -np $NP -machinefile $PBS_NODEFILE &lt;executable&gt; &lt;input file&gt;</span></pre></td></tr></table></figure>
-
-<p>编写好PBS脚本之后使用<code>$ qsub example.pbs</code>提交该作业</p>
-<hr>
-<h1 id="取消排队中的作业"><a href="#取消排队中的作业" class="headerlink" title="取消排队中的作业"></a>取消排队中的作业</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ qdel &lt;job ID&gt;</span></pre></td></tr></table></figure>
-
-<h1 id="停止正在运行的作业"><a href="#停止正在运行的作业" class="headerlink" title="停止正在运行的作业"></a>停止正在运行的作业</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ qsig -s KILL &lt;job ID&gt;</span></pre></td></tr></table></figure>
-
-
-
-
+        <h1 id="PBS简介"><a href="#PBS简介" class="headerlink" title="PBS简介"></a>PBS简介</h1>
+        
       
 
 
@@ -724,71 +495,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-<h1 id="搭建DNS服务器"><a href="#搭建DNS服务器" class="headerlink" title="搭建DNS服务器"></a>搭建DNS服务器</h1><ul>
-<li><p>环境:<strong><em>CentOS 7.5</em></strong></p>
-</li>
-<li><p>防火墙状态:<strong><em>已关闭</em></strong></p>
-</li>
-<li><p>安装bind</p>
-</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">yum -y install bind*</span></pre></td></tr></table></figure>
-
-<ul>
-<li>修改主配置文件</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ vim &#x2F;etc&#x2F;named.conf</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">-------------------</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">options &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">#       listen-on port 53 &#123; 127.0.0.1; &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        listen-on port 53 &#123; any; &#125;; &#x2F;&#x2F;修改为any</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        listen-on-v6 port 53 &#123; ::1; &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">        directory       &quot;&#x2F;var&#x2F;named&quot;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">        dump-file       &quot;&#x2F;var&#x2F;named&#x2F;data&#x2F;cache_dump.db&quot;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">        statistics-file &quot;&#x2F;var&#x2F;named&#x2F;data&#x2F;named_stats.txt&quot;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        memstatistics-file &quot;&#x2F;var&#x2F;named&#x2F;data&#x2F;named_mem_stats.txt&quot;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        recursing-file  &quot;&#x2F;var&#x2F;named&#x2F;data&#x2F;named.recursing&quot;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        secroots-file   &quot;&#x2F;var&#x2F;named&#x2F;data&#x2F;named.secroots&quot;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">#       allow-query     &#123; localhost; &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">        allow-query     &#123; any; &#125;; &#x2F;&#x2F;修改为any</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">        &#x2F;* </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">         - If you are building an AUTHORITATIVE DNS server, do NOT enable recursion.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">         - If you are building a RECURSIVE (caching) DNS server, you need to enable </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">           recursion. </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">         - If your recursive DNS server has a public IP address, you MUST enable access </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">           control to limit queries to your legitimate users. Failing to do so will</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">           cause your server to become part of large scale DNS amplification </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">           attacks. Implementing BCP38 within your network would greatly</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">           reduce such attack surface </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">        *&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">        recursion yes;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">        dnssec-enable yes;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">        dnssec-validation yes;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">        &#x2F;* Path to ISC DLV key *&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">        bindkeys-file &quot;&#x2F;etc&#x2F;named.iscdlv.key&quot;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">        managed-keys-directory &quot;&#x2F;var&#x2F;named&#x2F;dynamic&quot;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line">        pid-file &quot;&#x2F;run&#x2F;named&#x2F;named.pid&quot;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">37</span></pre></td><td class="code"><pre><span class="line">        session-keyfile &quot;&#x2F;run&#x2F;named&#x2F;session.key&quot;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">38</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">39</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">40</span></pre></td><td class="code"><pre><span class="line">logging &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">41</span></pre></td><td class="code"><pre><span class="line">        channel default_debug &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">42</span></pre></td><td class="code"><pre><span class="line">                file &quot;data&#x2F;named.run&quot;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">43</span></pre></td><td class="code"><pre><span class="line">                severity dynamic;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">44</span></pre></td><td class="code"><pre><span class="line">        &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">45</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">46</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">47</span></pre></td><td class="code"><pre><span class="line">zone &quot;.&quot; IN &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">48</span></pre></td><td class="code"><pre><span class="line">        type hint;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">49</span></pre></td><td class="code"><pre><span class="line">        file &quot;named.ca&quot;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">50</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">51</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">52</span></pre></td><td class="code"><pre><span class="line">include &quot;&#x2F;etc&#x2F;named.rfc1912.zones&quot;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">53</span></pre></td><td class="code"><pre><span class="line">include &quot;&#x2F;etc&#x2F;named.root.key&quot;;</span></pre></td></tr></table></figure>
-
-<ul>
-<li>修改区域文件 /etc/named.rfc1912.zones，在这个文件里面最后面添加正向解析域和反向解析域，在文件末尾加入以下代码，设置一个域名为luprivate.com的正向解析域，dns类型为master，文件名为luprivate.com.zone,不允许自动更新。设置反向解析域，dns类型为master，文件名为192.168.56.11.arpa,不允许自动更新。</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vim /etc/named.rfc1912.zones </span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">----------------------------</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">zone "localhost.localdomain" IN &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">        type master;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">        file "named.localhost";</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        allow-update &#123; none; &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">zone "localhost" IN &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">        type master;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">        file "named.localhost";</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">        allow-update &#123; none; &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">zone "1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa" IN &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">        type master;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">        file "named.loopback";</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">        allow-update &#123; none; &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">zone "1.0.0.127.in-addr.arpa" IN &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">        type master;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">        file "named.loopback";</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">        allow-update &#123; none; &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">zone "0.in-addr.arpa" IN &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">        type master;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">        file "named.empty";</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">        allow-update &#123; none; &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line">zone "luprivate.com" IN &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">        type master;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line">        file "luprivate.com.zone";</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line">        allow-update &#123; none; &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">37</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">38</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">39</span></pre></td><td class="code"><pre><span class="line">zone "11.56.168.192.in-addr.arpa" IN &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">40</span></pre></td><td class="code"><pre><span class="line">        type master;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">41</span></pre></td><td class="code"><pre><span class="line">        file "192.168.56.11.arpa";</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">42</span></pre></td><td class="code"><pre><span class="line">        allow-update &#123; none; &#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">43</span></pre></td><td class="code"><pre><span class="line">&#125;;</span></pre></td></tr></table></figure>
-
-<ul>
-<li>修改解析数据文件</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vim /var/named/luprivate.com.zone</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">---------------------------------</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">TTL 1D</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">@       IN SOA  ns.luprivate.com. root (</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">                                        0       ; serial</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">                                        1D      ; refresh</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">                                        1H      ; retry</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">                                        1W      ; expire</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">                                        3H )    ; minimum</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">@       IN      NS      ns.luprivate.com.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">ns      IN      A       192.168.56.11</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">www     IN      A       192.168.56.11</span></pre></td></tr></table></figure>
-
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> vim /var/named/192.168.56.11.arpa</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">---------------------------------</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash">TTL 1D</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">@       IN SOA  dns.luprivate.com. admin.luprivate.com. (</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">                                        0       ; serial</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">                                        1D      ; refresh</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">                                        1H      ; retry</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">                                        1W      ; expire</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">                                        3H )    ; minimum</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">@       IN      NS      ns.luprivate.com.</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">116     IN      PTR     www.luprivate.com.</span></pre></td></tr></table></figure>
-
-<ul>
-<li>修改所有者</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> chown root:named luprivate.com.zone</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> chown root:named 192.168.56.11.arpa</span></span></pre></td></tr></table></figure>
-
-<ul>
-<li>修改/etc/resolv.conf</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">nameserver 192.168.56.11</span></pre></td></tr></table></figure>
-
-<ul>
-<li>修改/etc/hosts</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">192.168.56.11   luprivate.com</span></pre></td></tr></table></figure>
-
-<ul>
-<li>重启named服务</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> systemctl restart named</span></span></pre></td></tr></table></figure>
-
-<ul>
-<li>查看对应端口情况</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> netstat -anpu</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Active Internet connections (servers and established)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">Proto Recv-Q Send-Q Local Address           Foreign Address</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">udp        0      0 0.0.0.0:5353            0.0.0.0:*</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">udp        0      0 0.0.0.0:36121           0.0.0.0:*</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">udp        0      0 0.0.0.0:839             0.0.0.0:*</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">udp        0      0 192.168.122.1:53        0.0.0.0:*</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">udp        0      0 10.0.3.15:53            0.0.0.0:*</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">udp        0      0 192.168.56.11:53        0.0.0.0:*</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">udp        0      0 127.0.0.1:53            0.0.0.0:*</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">udp        0      0 192.168.122.1:53        0.0.0.0:*</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">udp        0      0 0.0.0.0:67              0.0.0.0:*</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">udp        0      0 0.0.0.0:68              0.0.0.0:*</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">udp        0      0 0.0.0.0:111             0.0.0.0:*</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">udp6       0      0 :::839                  :::*</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">udp6       0      0 ::1:53                  :::*</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">udp6       0      0 :::111                  :::*</span></pre></td></tr></table></figure>
-
-<ul>
-<li>测试DNS服务器是否搭建成功</li>
-</ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">linux下测试：</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> host www.luprivate.com</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">www.luprivate.com has address 192.168.56.11</span></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">windows下测试：（需在网卡DNS中加入192.168.56.11）</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">nslookup</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&gt; www.luprivate.com</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">服务器:  UnKnown</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">Address:  192.168.56.11</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">名称:    www.luprivate.com</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">Address:  192.168.56.11</span></pre></td></tr></table></figure>
-
-<ul>
-<li>部署完成</li>
-</ul>
-
+        <h1 id="搭建DNS服务器"><a href="#搭建DNS服务器" class="headerlink" title="搭建DNS服务器"></a>搭建DNS服务器</h1>
+        
       
 
 
@@ -867,78 +575,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-<h1 id="Modules简介"><a href="#Modules简介" class="headerlink" title="Modules简介"></a>Modules简介</h1><ul>
-<li>在 Linux 超算平台上，通常会安装有不同版本的多种编译器和其他软件等，如常用的编译器有 intel 和 gnu，常用的 MPI 并行库包括 intel mpi，openmpi，mpich2 等，而且对于同一软件，还包含不同的版本或采用不同编译设置得到的可执行程序和链接库等。在使用这些程序时，经常需要对环境变量进行修改。并且由于程序编译时会调用不同类型编译器或第三库，这时程序之间还存在着依赖关系。这使得当执行某个特定版本的程序时，环境变量的修改变得十分复杂。</li>
-<li>Environment Modules 包是一个简化 shell 初始化的工具，它允许用户在使用 modulefiles 进行会话期间轻松修改其环境。每个模块文件都包含为应用程序配置 shell 所需的信息。模块文件可以由系统上的许多用户共享，并且用户可以拥有自己的集合来补充或替换共享模块文件。</li>
-</ul>
-<h1 id="Modules安装"><a href="#Modules安装" class="headerlink" title="Modules安装"></a>Modules安装</h1><ul>
-<li><p>可以使用yum安装，这里用普通用户以源码安装方式安装，在<a href="http://modules.sourceforge.net/" target="_blank" rel="noopener">Modules官网</a>下载最新版本的源代码。此处提供<a href="https://pan.baidu.com/s/1C-xnu2xSsScsenzRVCgeiw" target="_blank" rel="noopener">modules-4.4.0的网盘下载地址</a>，提取码：<code>tdpx</code>。</p>
-</li>
-<li><p>以下为实际安装过程，路径设置请根据各自所需。</p>
-</li>
-<li><p>下载完毕后上传到服务器上，压缩包上传目录为<code>/home/lyh/MDT/package/</code>，安装目录为<code>/home/lyh/MDT/software/</code>。</p>
-</li>
-</ul>
-<blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ~/MDT/package/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> tar -zxvf modules-4.4.0.tar.gz -C ../software/</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ../software/modules-4.4.0</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./configure --prefix=/home/lyh/MDT/software/modules</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> make</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> make install</span></span></pre></td></tr></table></figure>
-</blockquote>
-<ul>
-<li>安装完毕后我们将modules设置脚本添加入环境变量中，注意，modules中包含多种shell设置脚本，可以根据不同情况设置。这里由于我用的是bash，输入如下命令即可</li>
-</ul>
-<blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> <span class="string">'source /home/lyh/MDT/software/modules/init/bash'</span> &gt;&gt; ~/.bashrc</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">source</span> ~/.bashrc</span></span></pre></td></tr></table></figure>
-</blockquote>
-<ul>
-<li>输入如下命令，查看当前包含的模块并加载用户模块</li>
-</ul>
-<blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module avail</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">------------------------------------------------------------------------ /home/lyh/MDT/software/modules/modulefiles -------------------------------------------------------------------------</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">dot  module-git  module-info  modules  null  use.own</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module load use.own</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module list</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">Currently Loaded Modulefiles:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">1) use.own</span></pre></td></tr></table></figure>
-</blockquote>
-<ul>
-<li>此时，用户目录下会出现<code>privatemodules</code>文件夹，用户可以直接在此文件夹中添加自定义模块文件添加环境变量。</li>
-</ul>
-<h1 id="Modules使用"><a href="#Modules使用" class="headerlink" title="Modules使用"></a>Modules使用</h1><ul>
-<li>Modules 使用包括 <code>shell</code> 命令和<code>modulefile</code>文件定义两部分内容，下面将分别进行介绍。</li>
-</ul>
-<ol>
-<li><p>Moudels指令</p>
-<ul>
-<li>module 安装好后，即可调用<code>module [command]</code>来查看或加载模块，主要指令如下：</li>
-</ul>
-<blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module avail  <span class="comment">#列出当前module path 中的所有可用模块文件</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">----------------------------------------------------------------------- /home/lyh/MDT/software/modules/modulefiles -------------------------------------------------------------------------</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">dot  module-git  module-info  modules  null  use.own</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">--------------------------------------------------------------------------------- /home/lyh/privatemodules ----------------------------------------------------------------------------------</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">cmake-3.15.3  null</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module load cmake-3.15.3 <span class="comment">#加载模块文件/类</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module list <span class="comment">#显示已经加载的模块</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">Currently Loaded Modulefiles:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"> 1) use.own   2) cmake-3.15.3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module unload cmake-3.15.3  <span class="comment">#卸载模块文件/类</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module list <span class="comment">#显示已经加载的模块</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">Currently Loaded Modulefiles:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"> 1) use.own</span></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ol>
-<ol start="2">
-<li><p>Modules脚本内容</p>
-<ul>
-<li>采用 <code>module load</code>命令时，可用的模块其实都是安装在 <code>module path</code>目录下的<code>modulefile</code> 文件。一个基本 modulefile 内容如下：</li>
-</ul>
-<blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">%Module -*- tcl -*-</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># This is a module to access something</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 显示 module <span class="built_in">help</span> 主要内容</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">proc ModulesHelp &#123; &#125; &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        puts stderr "This module sets up access to something"</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 显示 module whatis 显示主要内容</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">module-whatis "sets up access to something"</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> module 加载前需要模块类</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">prereq module_flag</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> module 加载冲突模块类</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">conflict another_module_flag</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 加载其他模块</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">module load gcc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 设置环境变量</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">setenv       SOMEVERION       0.95</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 添加环境变量</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">append-path  PATH             /home/[user]/[somedir]/bin</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">append-path  MANPATH          /home/[user]/[somedir]/man</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">append-path  LD_LIBRARY_PATH  /home/[user]/[somedir]/lib</span></pre></td></tr></table></figure>
-</blockquote>
-<ul>
-<li>其中包含的设置关键字有以下几个<ul>
-<li>prereq 指示加载此脚本需要预先加载的模块名，当这些模块没有预先加载时，module load 此模块会报错；</li>
-<li>conflict 指示与此模块冲突的其他模块类，注意这里不仅可以添加 modulefile 文件名称，也可添加 modulefile 所在路径文件名，此时代表模块和文件内所有模块类都会产生冲突；</li>
-<li>module load 指示加载此模块同时自动加载的模块，注意其和 prereq 命令的不同；</li>
-<li>setenv 设定环境变量；</li>
-<li>append-path 添加环境变量。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h1 id="Modules脚本示例"><a href="#Modules脚本示例" class="headerlink" title="Modules脚本示例"></a>Modules脚本示例</h1><ul>
-<li>以Cmake3.15.3为例：</li>
-</ul>
-<blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat ~/privatemodules/cmake-3.15.3</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">%Module1.0<span class="comment">#####################################################################</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># modules modulefile</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">#</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">module-whatis	"Cmake-3.15.3"</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">prepend-path	PATH	/home/lyh/MDT/software/cmake/bin</span></pre></td></tr></table></figure>
-</blockquote>
-
+        <h1 id="Modules简介"><a href="#Modules简介" class="headerlink" title="Modules简介"></a>Modules简介</h1>
+        
       
 
 
@@ -1017,62 +655,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-<h1 id="Amber简介"><a href="#Amber简介" class="headerlink" title="Amber简介"></a>Amber简介</h1><p>Amber（Assisted Model Building with Energy Refinement）这个名词通常涉及两个产品：一个是一套生物分子模拟的分子立场；另一个是由TSRI&amp;UCSF发布的包含代码和演示的分子模拟软件包，由AmberTools和Amber组成，Amber是一个多个程序的集合包，大约包含50多个程序，相互协调工作。</p>
-<p>主要的程序有：</p>
-<ul>
-<li>sander：Simulated annealing with NMR-derived energy restraints，用来自NMR的能量限制模拟退火。可以基于来自NOE的距离限制和扭转角限制、基于化学位移和NOESY值的性能损失函数，进行NMR的精细化。Sander也是用于分子动力学模拟的主程序，并且支持QM/MM(量化/动力学)运算。</li>
-<li>nmode：使用一阶和二阶导数信息进行简正模式分析的程序，用于寻找局域最小值，进行振动分析，寻找过渡态。</li>
-<li>LEaP：X-window程序，用于基本模型，AMBER坐标和参数/拓扑文件的创建。它包含分子编辑器，可以创建氨基酸&gt;残基并对大分子进行修饰。</li>
-<li>antechamber：该程序套件对大多数有机分子和金属配位中心自动产生力场描述。它从结构开始（通常是PDB格式&gt;），产生LEaP可识别的文件用于分子模拟。要求对蛋白质和核酸产生的力场与通常的Amber力场一致，另外还可以和高斯兼容，生成高斯计算的输入文件用于量化计算。</li>
-<li>ptraj和carnal：用于分析MD轨迹，计算参考结构的RMS偏差，氢键分析，时间相关函数，扩散特性，等。</li>
-<li>mm_pbsa：脚本，对MD轨迹自动后期处理，用连续溶剂方法进行热力学分析。它能够把能量归属到不同的氨基酸残基片断中去，并估算不同构像之间的自由能量差。</li>
-<li>pmemd：这是一个在sander基础上进行重大修改的程序（最初由Bob Duke发起），用于优化周期性、PME模拟以及GB模拟过程。新版本Pmemd的计算速度要比Sander快，而且更适用于并行。此外，11版新增NVIDIA GPU加速，因此，它通&gt;常是一可选程序，除非你需要的选项它不支持。在新版模型中，我们可以理解为：sander是研究新的性质的有效手段，pmemd如同“生产”的代码，是实现Sander最常用的一个行之有效的工具，在高性能环境中表现良好。</li>
-<li>ptraj：这是用来分析MD轨迹，计算的各种数据，如：相关结构的均方根偏差，氢键分析，时间相关函数，扩散&gt;行为等等。</li>
-</ul>
-<h1 id="Amber18下载"><a href="#Amber18下载" class="headerlink" title="Amber18下载"></a>Amber18下载</h1><ul>
-<li><a href="https://pan.baidu.com/s/19PsOzzC_qWQ6NYonEwWvzQ" target="_blank" rel="noopener">Amber18.tar.bz2</a><code>提取码：gecf</code></li>
-<li><a href="https://pan.baidu.com/s/1_lAYXtoZROdlJKZDCC-xMg" target="_blank" rel="noopener">AmberTools19.tar.bz2</a><code>提取码：knaz</code></li>
-</ul>
-<h1 id="Amber18编译安装"><a href="#Amber18编译安装" class="headerlink" title="Amber18编译安装"></a>Amber18编译安装</h1><p>此处为安装实例，把安装好的软件上传于<code>/public/software/</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ cd &#x2F;public&#x2F;software&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ tar xvfj Amber18.tar.bz2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$ tar xvfj AmberTools19.tar.bz2</span></pre></td></tr></table></figure>
-
-<p>两个压缩包会解压到一个名为amber18的文件夹里。  </p>
-<p>设置AMBERHOME主目录环境变量：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ export AMBERHOME&#x3D;&#x2F;public&#x2F;software&#x2F;amber18</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">或</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$ echo &#39;export AMBERHOME&#x3D;&#x2F;public&#x2F;software&#x2F;amber18&#39; &gt;&gt; ~&#x2F;.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$ source ~&#x2F;.bashrc</span></pre></td></tr></table></figure>
-
-<p>安装依赖的软件及软件库：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ yum -y install gcc gcc-gfortran gcc-c++ flex tcsh zlib-devel bzip2-devel libXt-devel libXext-devel libXdmcp-devel tkinter openmpi openmpi-devel perl perl-ExtUtils-MakeMaker patch bison boost-devel</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ cd $AMBERHOME</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$ .&#x2F;configure --help # 执行此命令可以看到不同的编译模式，不同的参数设置</span></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li><p>串行安装</p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ cd $AMBERHOME</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ .&#x2F;configure --with-python $&#123;Python执行路径&#125; gnu</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">#此命令会生成处amber.sh和amber.csh文件，这两个文件可以用于添加amber所需的环境变量</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$ sourch amber.sh # 添加环境变量信息，也可以自己动手在~&#x2F;.bashrc中添加</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">$ make install # 编译安装</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">$ make test # 编译测试</span></pre></td></tr></table></figure>
-</blockquote>
-</li>
-<li><p>多线程(openmpi)编译安装：</p>
-<p><strong><em>安装openmpi以及配置环境变量的过程此处不再赘述。</em></strong></p>
-<p><a href="https://pan.baidu.com/s/1oVlFNCOAeZCEhliJVJcBog" target="_blank" rel="noopener">openmpi-4.0.1 百度网盘下载地址</a><code>提取码：ai53</code></p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ cd $AMBERHOME</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ .&#x2F;configure --with-python $&#123;Python执行路径&#125; -mpi gnu</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"># 此命令会生成处amber.sh和amber.csh文件，这两个文件可以用于添加amber所需的环境变量</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$ source amber.sh # 添加环境变量信息，也可以自己动手在~&#x2F;.bashrc中添加</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">$ make install # 编译安装</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">$ export DO_PARALLEL&#x3D;&quot;mpirun --allow-run-as-root -np 4&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"># openmpi2.0以后的版本，用户是root的话，mpirun并行运行的话不会计算，须加上--allow-run-as-root</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">$ .&#x2F;configure --with-python $&#123;Python执行路径&#125; -openmp gnu</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">$ make openmp</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">$ make test # 编译测试</span></pre></td></tr></table></figure>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li><p>GPU版本编译安装：</p>
-<p>安装显卡驱动和cuda以及配置环境变量的过程此处也不再赘述。</p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ cd $AMBERHOME</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ .&#x2F;configure --with-python $&#123;Python执行路径&#125; -cuda gnu</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$ make install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">$ .&#x2F;configure --with-python $&#123;Python执行路径&#125; -cuda -mpi gnu</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">$ make install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">$ make test</span></pre></td></tr></table></figure>
-</blockquote>
-</li>
-<li><p>添加Amber18环境变量：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ echo &#39;export AMBERHOME&#x3D;&#x2F;public&#x2F;software&#x2F;amber18&#39; &gt;&gt; ~&#x2F;.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ echo &#39;export PATH&#x3D;&#x2F;public&#x2F;software&#x2F;amber18&#x2F;bin:$PATH&#39; &gt;&gt; ~&#x2F;.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$ source ~&#x2F;.bashrc</span></pre></td></tr></table></figure>
-</li>
-</ul>
-
+        <h1 id="Amber简介"><a href="#Amber简介" class="headerlink" title="Amber简介"></a>Amber简介</h1>
+        
       
 
 
@@ -1151,24 +735,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-<h1 id="cmake简介"><a href="#cmake简介" class="headerlink" title="cmake简介"></a>cmake简介</h1><p>   cmake是一个跨平台的安装（编译）工具，可以用简单的语句来描述所有平台的安装（编译过程）。</p>
-<h1 id="cmake下载"><a href="#cmake下载" class="headerlink" title="cmake下载"></a>cmake下载</h1><p>   <a href="https://cmake.org/" target="_blank" rel="noopener">cmake官方网址</a></p>
-<p>   <a href="https://pan.baidu.com/s/1JemZdFcKtmfJQnUFlxxKPg" target="_blank" rel="noopener">cmake网盘下载地址</a> 提取码：6nok</p>
-<h1 id="cmake编译安装"><a href="#cmake编译安装" class="headerlink" title="cmake编译安装"></a>cmake编译安装</h1><p>   安装之前要确保已经安装的有<code>gcc</code>、<code>g++</code>。</p>
-<p>   下为实际安装过程，路径设置请根据各自所需。</p>
-<p>   下载完毕后上传到服务器上，压缩包上传路径为<code>/home/lyh/MDT/package/</code>，安装路径为<code>/home/lyh/MDT/software</code>。</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ cd ~&#x2F;MDT&#x2F;package&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ tar -zxvf cmake-3.15.3.tar.gz -C ..&#x2F;software&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$ cd ..&#x2F;software&#x2F;cmake-3.15.3&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$ .&#x2F;bootstrap --prefix&#x3D;&#x2F;home&#x2F;lyh&#x2F;MDT&#x2F;software&#x2F;cmale</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">$ gmake</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">$ gmake install</span></pre></td></tr></table></figure>
-
-<p>   查看所安装的文件位置信息</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ more install_mainfest.txt</span></pre></td></tr></table></figure>
-
-<p>   添加环境变量</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ echo &quot;export PATH&#x3D;&#x2F;home&#x2F;lyh&#x2F;MDT&#x2F;software&#x2F;cmake&#x2F;bin:$PATH&quot; &gt;&gt; ~&#x2F;.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ source ~&#x2F;.bashrc</span></pre></td></tr></table></figure>
-
-
-
+        <h1 id="cmake简介"><a href="#cmake简介" class="headerlink" title="cmake简介"></a>cmake简介</h1>
+        
       
 
 
@@ -1317,11 +885,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">软件</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">PBS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">PBS</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">软件</a>
               </li>
              
               <li class="article-tag-list-item">

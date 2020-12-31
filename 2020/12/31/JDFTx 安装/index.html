@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://lu-git.github.io">
   <title>CentOS7编译安装JDFTx | 卢记杂货店</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JDFTx 安装 *cmake、gcc和intel编译器安装步骤不再赘述。  *  gsl 安装1wget http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;gnu&#x2F;gsl&#x2F;gsl-2.5.tar.gz2tar -xzvf gsl-2.5.tar.gz3cd gsl-2.5&#x2F;4.&#x2F;configure --prefix&#x3D;&#x2F;home&#x2F;lyh&#x2F;gsl5make -j 126make -j 12">
+  <meta name="description" content="JDFTx 安装">
 <meta name="keywords" content="软件">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS7编译安装JDFTx">
 <meta property="og:url" content="https:&#x2F;&#x2F;lu-git.github.io&#x2F;2020&#x2F;12&#x2F;31&#x2F;JDFTx%20%E5%AE%89%E8%A3%85&#x2F;index.html">
 <meta property="og:site_name" content="卢记杂货店">
-<meta property="og:description" content="JDFTx 安装 *cmake、gcc和intel编译器安装步骤不再赘述。  *  gsl 安装1wget http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;gnu&#x2F;gsl&#x2F;gsl-2.5.tar.gz2tar -xzvf gsl-2.5.tar.gz3cd gsl-2.5&#x2F;4.&#x2F;configure --prefix&#x3D;&#x2F;home&#x2F;lyh&#x2F;gsl5make -j 126make -j 12">
+<meta property="og:description" content="JDFTx 安装">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-31T03:04:23.000Z">
+<meta property="og:updated_time" content="2020-12-31T03:08:29.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="卢记杂货店" type="application/atom+xml">
@@ -167,9 +167,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <h1 id="JDFTx-安装"><a href="#JDFTx-安装" class="headerlink" title="JDFTx 安装"></a>JDFTx 安装</h1><a id="more"></a>
 
-<h1 id="JDFTx-安装"><a href="#JDFTx-安装" class="headerlink" title="JDFTx 安装"></a>JDFTx 安装</h1><ul>
+<ul>
 <li>*<em>cmake、gcc和intel编译器安装步骤不再赘述。  *</em></li>
 </ul>
 <h2 id="gsl-安装"><a href="#gsl-安装" class="headerlink" title="gsl 安装"></a>gsl 安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wget http://mirrors.ustc.edu.cn/gnu/gsl/gsl-2.5.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">tar -xzvf gsl-2.5.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">cd gsl-2.5/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">./configure --prefix=/home/lyh/gsl</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">make -j 12</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">make -j 12 install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">echo 'export PATH=/home/lyh/libxc/bin:$PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">echo 'export LD_LIBRARY_PATH=/home/lyh/libxc/lib:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span></pre></td></tr></table></figure>
@@ -426,11 +426,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">软件</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">PBS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">PBS</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">软件</a>
               </li>
              
               <li class="article-tag-list-item">
