@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://lu-git.github.io">
   <title>CentOS7编译安装GCC 10.2 | 卢记杂货店</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="GCC 10.2 install​    Linux系统会预装GCC，但是出于稳定性和兼容性的考虑，预装的GCC版本都是较低的稳定版，而有些软件的新版本安装编译时需要较高版本的GCC，对于普通用户来说，就需要在自己的目录下安装所需版本的GCC了。此文中的路径需要自行更改。">
+  <meta name="description" content="CentOS编译安装GCC 10.2">
 <meta name="keywords" content="gcc,编译器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CentOS7编译安装GCC 10.2">
 <meta property="og:url" content="https:&#x2F;&#x2F;lu-git.github.io&#x2F;2020&#x2F;12&#x2F;31&#x2F;GCC%2010.2%20install&#x2F;index.html">
 <meta property="og:site_name" content="卢记杂货店">
-<meta property="og:description" content="GCC 10.2 install​    Linux系统会预装GCC，但是出于稳定性和兼容性的考虑，预装的GCC版本都是较低的稳定版，而有些软件的新版本安装编译时需要较高版本的GCC，对于普通用户来说，就需要在自己的目录下安装所需版本的GCC了。此文中的路径需要自行更改。">
+<meta property="og:description" content="CentOS编译安装GCC 10.2">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-31T00:24:39.000Z">
+<meta property="og:updated_time" content="2020-12-31T00:31:05.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="卢记杂货店" type="application/atom+xml">
@@ -167,10 +167,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="GCC-10-2-install"><a href="#GCC-10-2-install" class="headerlink" title="GCC 10.2 install"></a>GCC 10.2 install</h1><p>​    Linux系统会预装GCC，但是出于稳定性和兼容性的考虑，预装的GCC版本都是较低的稳定版，而有些软件的新版本安装编译时需要较高版本的GCC，对于普通用户来说，就需要在自己的目录下安装所需版本的GCC了。<code>此文中的路径需要自行更改。</code></p>
-<hr>
-<a id="more"></a>
+        <h1 id="CentOS编译安装GCC-10-2"><a href="#CentOS编译安装GCC-10-2" class="headerlink" title="CentOS编译安装GCC 10.2"></a>CentOS编译安装GCC 10.2</h1><a id="more"></a>
 
+<p>​    Linux系统会预装GCC，但是出于稳定性和兼容性的考虑，预装的GCC版本都是较低的稳定版，而有些软件的新版本安装编译时需要较高版本的GCC，对于普通用户来说，就需要在自己的目录下安装所需版本的GCC了。<code>此文中的路径需要自行更改。</code></p>
+<hr>
 <h2 id="依赖包安装"><a href="#依赖包安装" class="headerlink" title="依赖包安装"></a>依赖包安装</h2><h3 id="gmp编译"><a href="#gmp编译" class="headerlink" title="gmp编译"></a>gmp编译</h3><p>​    此处提供百度网盘下载链接<a href="https://pan.baidu.com/s/1kFV_tkyup9euDNJyhbudcw" target="_blank" rel="noopener">gmp-6.2.0</a>，提取码<code>g5lh</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">tar -vxf gmp-6.2.0.tar.bz2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">cd gmp-6.2.0/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">./configure --prefix=/home/luyh/software/gmp</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">make</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">make install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">---</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">echo 'export LD_LIBRARY_PATH=/home/luyh/software/gmp/lib:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span></pre></td></tr></table></figure>
 
@@ -314,7 +314,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GCC-10-2-install"><span class="toc-number">1.</span> <span class="toc-text">GCC 10.2 install</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖包安装"><span class="toc-number">1.1.</span> <span class="toc-text">依赖包安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gmp编译"><span class="toc-number">1.1.1.</span> <span class="toc-text">gmp编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mpfr编译"><span class="toc-number">1.1.2.</span> <span class="toc-text">mpfr编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mpc编译"><span class="toc-number">1.1.3.</span> <span class="toc-text">mpc编译</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GCC安装"><span class="toc-number">1.2.</span> <span class="toc-text">GCC安装</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CentOS编译安装GCC-10-2"><span class="toc-number">1.</span> <span class="toc-text">CentOS编译安装GCC 10.2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#依赖包安装"><span class="toc-number">1.1.</span> <span class="toc-text">依赖包安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#gmp编译"><span class="toc-number">1.1.1.</span> <span class="toc-text">gmp编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mpfr编译"><span class="toc-number">1.1.2.</span> <span class="toc-text">mpfr编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mpc编译"><span class="toc-number">1.1.3.</span> <span class="toc-text">mpc编译</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GCC安装"><span class="toc-number">1.2.</span> <span class="toc-text">GCC安装</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
