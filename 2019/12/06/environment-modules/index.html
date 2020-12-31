@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="卢记杂货店">
 <meta property="og:description" content="Modules简介">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-31T03:08:16.000Z">
+<meta property="og:updated_time" content="2020-12-31T07:29:56.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="卢记杂货店" type="application/atom+xml">
@@ -202,26 +202,21 @@
 <h1 id="Modules使用"><a href="#Modules使用" class="headerlink" title="Modules使用"></a>Modules使用</h1><ul>
 <li>Modules 使用包括 <code>shell</code> 命令和<code>modulefile</code>文件定义两部分内容，下面将分别进行介绍。</li>
 </ul>
-<ol>
-<li><p>Moudels指令</p>
-<ul>
-<li>module 安装好后，即可调用<code>module [command]</code>来查看或加载模块，主要指令如下：</li>
-</ul>
+<h2 id="Moudels指令"><a href="#Moudels指令" class="headerlink" title="Moudels指令"></a>Moudels指令</h2><ul>
+<li><p>module 安装好后，即可调用<code>module [command]</code>来查看或加载模块，主要指令如下：</p>
 <blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module avail  <span class="comment">#列出当前module path 中的所有可用模块文件</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">----------------------------------------------------------------------- /home/lyh/MDT/software/modules/modulefiles -------------------------------------------------------------------------</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">dot  module-git  module-info  modules  null  use.own</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">--------------------------------------------------------------------------------- /home/lyh/privatemodules ----------------------------------------------------------------------------------</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">cmake-3.15.3  null</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module load cmake-3.15.3 <span class="comment">#加载模块文件/类</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module list <span class="comment">#显示已经加载的模块</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">Currently Loaded Modulefiles:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"> 1) use.own   2) cmake-3.15.3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module unload cmake-3.15.3  <span class="comment">#卸载模块文件/类</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> module list <span class="comment">#显示已经加载的模块</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">Currently Loaded Modulefiles:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"> 1) use.own</span></pre></td></tr></table></figure>
 </blockquote>
 </li>
-</ol>
-<ol start="2">
-<li><p>Modules脚本内容</p>
-<ul>
-<li>采用 <code>module load</code>命令时，可用的模块其实都是安装在 <code>module path</code>目录下的<code>modulefile</code> 文件。一个基本 modulefile 内容如下：</li>
 </ul>
+<h2 id="Modules脚本内容"><a href="#Modules脚本内容" class="headerlink" title="Modules脚本内容"></a>Modules脚本内容</h2><ul>
+<li><p>采用 <code>module load</code>命令时，可用的模块其实都是安装在 <code>module path</code>目录下的<code>modulefile</code> 文件。一个基本 modulefile 内容如下：</p>
 <blockquote>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">%Module -*- tcl -*-</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment"># This is a module to access something</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 显示 module <span class="built_in">help</span> 主要内容</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">proc ModulesHelp &#123; &#125; &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">        puts stderr "This module sets up access to something"</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 显示 module whatis 显示主要内容</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">module-whatis "sets up access to something"</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> module 加载前需要模块类</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">prereq module_flag</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> module 加载冲突模块类</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">conflict another_module_flag</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 加载其他模块</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">module load gcc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 设置环境变量</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">setenv       SOMEVERION       0.95</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 添加环境变量</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">append-path  PATH             /home/[user]/[somedir]/bin</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">append-path  MANPATH          /home/[user]/[somedir]/man</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">append-path  LD_LIBRARY_PATH  /home/[user]/[somedir]/lib</span></pre></td></tr></table></figure>
 </blockquote>
+</li>
+<li><p>其中包含的设置关键字有以下几个</p>
 <ul>
-<li>其中包含的设置关键字有以下几个<ul>
 <li>prereq 指示加载此脚本需要预先加载的模块名，当这些模块没有预先加载时，module load 此模块会报错；</li>
 <li>conflict 指示与此模块冲突的其他模块类，注意这里不仅可以添加 modulefile 文件名称，也可添加 modulefile 所在路径文件名，此时代表模块和文件内所有模块类都会产生冲突；</li>
 <li>module load 指示加载此模块同时自动加载的模块，注意其和 prereq 命令的不同；</li>
@@ -230,9 +225,7 @@
 </ul>
 </li>
 </ul>
-</li>
-</ol>
-<h1 id="Modules脚本示例"><a href="#Modules脚本示例" class="headerlink" title="Modules脚本示例"></a>Modules脚本示例</h1><ul>
+<h2 id="Modules脚本示例"><a href="#Modules脚本示例" class="headerlink" title="Modules脚本示例"></a>Modules脚本示例</h2><ul>
 <li>以Cmake3.15.3为例：</li>
 </ul>
 <blockquote>
@@ -365,7 +358,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Modules简介"><span class="toc-number">1.</span> <span class="toc-text">Modules简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Modules安装"><span class="toc-number">2.</span> <span class="toc-text">Modules安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Modules使用"><span class="toc-number">3.</span> <span class="toc-text">Modules使用</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Modules脚本示例"><span class="toc-number">4.</span> <span class="toc-text">Modules脚本示例</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Modules简介"><span class="toc-number">1.</span> <span class="toc-text">Modules简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Modules安装"><span class="toc-number">2.</span> <span class="toc-text">Modules安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Modules使用"><span class="toc-number">3.</span> <span class="toc-text">Modules使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Moudels指令"><span class="toc-number">3.1.</span> <span class="toc-text">Moudels指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modules脚本内容"><span class="toc-number">3.2.</span> <span class="toc-text">Modules脚本内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Modules脚本示例"><span class="toc-number">3.3.</span> <span class="toc-text">Modules脚本示例</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -480,6 +473,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">软件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">DNS</a>
               </li>
              
@@ -492,15 +489,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">软件</a>
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">PBS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">工具</a>
               </li>
             
             <div class="clearfix"></div>
