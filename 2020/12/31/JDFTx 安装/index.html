@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lu-git.github.io">
-  <title>PBS作业调度系统 | 卢记杂货店</title>
+  <title>CentOS7编译安装JDFTx | 卢记杂货店</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="PBS简介">
-<meta name="keywords" content="PBS">
+  <meta name="description" content="JDFTx 安装">
+<meta name="keywords" content="软件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PBS作业调度系统">
-<meta property="og:url" content="https:&#x2F;&#x2F;lu-git.github.io&#x2F;2019&#x2F;12&#x2F;10&#x2F;PBS_system&#x2F;index.html">
+<meta property="og:title" content="CentOS7编译安装JDFTx">
+<meta property="og:url" content="https:&#x2F;&#x2F;lu-git.github.io&#x2F;2020&#x2F;12&#x2F;31&#x2F;JDFTx%20%E5%AE%89%E8%A3%85&#x2F;index.html">
 <meta property="og:site_name" content="卢记杂货店">
-<meta property="og:description" content="PBS简介">
+<meta property="og:description" content="JDFTx 安装">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-31T03:09:19.000Z">
+<meta property="og:updated_time" content="2020-12-31T04:57:50.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="卢记杂货店" type="application/atom+xml">
@@ -147,210 +147,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-PBS_system" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JDFTx 安装" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      PBS作业调度系统
+      CentOS7编译安装JDFTx
     </h1>
   
 
         
-        <a href="/2019/12/10/PBS_system/" class="archive-article-date">
-  	<time datetime="2019-12-10T06:35:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-10</time>
+        <a href="/2020/12/31/JDFTx%20%E5%AE%89%E8%A3%85/" class="archive-article-date">
+  	<time datetime="2020-12-31T00:21:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-31</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="PBS简介"><a href="#PBS简介" class="headerlink" title="PBS简介"></a>PBS简介</h1><a id="more"></a>
+        <h1 id="JDFTx-安装"><a href="#JDFTx-安装" class="headerlink" title="JDFTx 安装"></a>JDFTx 安装</h1><a id="more"></a>
 
 <ul>
-<li>PBS （Protable Batch System） 作业调度系统会根据一个集群上的可用计算节点的计算资源来调度计算作业（无论是批处理作业还是交互式作业）。</li>
+<li>*<em>cmake、gcc和intel编译器安装步骤不再赘述。  *</em></li>
 </ul>
-<h1 id="PBS常用命令"><a href="#PBS常用命令" class="headerlink" title="PBS常用命令"></a>PBS常用命令</h1><blockquote>
-<ul>
-<li>qsub: 提交作业</li>
-<li>qdel:取消作业</li>
-<li>qsig: 给作业发送信号</li>
-<li>qhold: 挂起作业</li>
-<li>qrls: 释放挂起的作业</li>
-<li>qrerun: 重新运行作业</li>
-<li>qmove: 将作业移动到另一个队列</li>
-<li>qalter: 更改作业资源属性</li>
-</ul>
-</blockquote>
-<hr>
-<h1 id="作业监测"><a href="#作业监测" class="headerlink" title="作业监测"></a>作业监测</h1><blockquote>
-<ul>
-<li>qstat: 显示作业状态</li>
-</ul>
-<blockquote>
-<ul>
-<li>qstat -q 显示已经配置的所有节点池状态信息</li>
-<li>qstat -a 显示已经提交的作业状态信息</li>
-<li>qstat -f JOBID 显示指定作业的所有状态信息</li>
-</ul>
-</blockquote>
-<ul>
-<li>showq: 查看所有作业</li>
-</ul>
-</blockquote>
-<hr>
-<h1 id="节点状态"><a href="#节点状态" class="headerlink" title="节点状态"></a>节点状态</h1><ul>
-<li>pbsnodes: 列出集群包含的所有节点的状态和属性</li>
-</ul>
-<hr>
-<h1 id="PBS作业属性"><a href="#PBS作业属性" class="headerlink" title="PBS作业属性"></a>PBS作业属性</h1><ul>
-<li>使用命令行的方式把参数传递给qsub命令</li>
-<li>编写PBS脚本，以#PBS方式指定</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th align="center">属性</th>
-<th align="center">取值</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">-l</td>
-<td align="center">以:分隔的资源信息</td>
-<td align="center">设定作业所需资源</td>
-</tr>
-<tr>
-<td align="center">-N</td>
-<td align="center">作业名称</td>
-<td align="center">设定作业名称</td>
-</tr>
-<tr>
-<td align="center">-o</td>
-<td align="center">文件路径</td>
-<td align="center">设定作业的标准输出文件路径</td>
-</tr>
-<tr>
-<td align="center">-e</td>
-<td align="center">文件路径</td>
-<td align="center">设定作业的标准错误文件路径</td>
-</tr>
-<tr>
-<td align="center">-q</td>
-<td align="center">队列名称</td>
-<td align="center">设定作业队列名称</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="center">资源</th>
-<th align="center">取值</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">nodes</td>
-<td align="center">正整数</td>
-<td align="center">设定作业所需计算节点资源</td>
-</tr>
-<tr>
-<td align="center">walltime</td>
-<td align="center">hh:mm:ss</td>
-<td align="center">设定作业所需的最大wallclock时间</td>
-</tr>
-<tr>
-<td align="center">cput</td>
-<td align="center">hh:mm:ss</td>
-<td align="center">设定作业所需的最大CPU时间</td>
-</tr>
-<tr>
-<td align="center">mem</td>
-<td align="center">正整数，后面可跟b,kb,mb,gb</td>
-<td align="center">设定作业所需的最大内存</td>
-</tr>
-<tr>
-<td align="center">ppn</td>
-<td align="center">正整数</td>
-<td align="center">设定作业所需的CPU数目</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>nodes=<num nodes> 设定所需节点数</p>
-<p>nodes=<num nodes>:ppn=<num procs per node> 设定所需节点数和每个节点上使用的处理器数目</p>
-<p>nodes=&lt;list of node names separated by ‘+’&gt; 设定所要使用的节点</p>
-</blockquote>
-<hr>
-<h1 id="PBS环境变量"><a href="#PBS环境变量" class="headerlink" title="PBS环境变量"></a>PBS环境变量</h1><table>
-<thead>
-<tr>
-<th align="center">环境变量</th>
-<th align="center">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">PBS_ENVIRONMENT</td>
-<td align="center">批处理作业为PBS_BATCH，交互式作业为PBS_INTERACTIVE</td>
-</tr>
-<tr>
-<td align="center">PBS_JOBID</td>
-<td align="center">PBS系统给作业分配的标识号</td>
-</tr>
-<tr>
-<td align="center">PBS_JOBNAME</td>
-<td align="center">用户指定的作业名称</td>
-</tr>
-<tr>
-<td align="center">PBS_NODEFILE</td>
-<td align="center">包含作业所用计算节点的文件名</td>
-</tr>
-<tr>
-<td align="center">PBS_QUEUE</td>
-<td align="center">作业所执行的队列名称</td>
-</tr>
-<tr>
-<td align="center">PBS_O_HOME</td>
-<td align="center">执行qsub命令的HOME环境变量值</td>
-</tr>
-<tr>
-<td align="center">PBS_O_PATH</td>
-<td align="center">执行qsub命令的PATH环境变量值</td>
-</tr>
-<tr>
-<td align="center">PBS_O_SHELL</td>
-<td align="center">执行qsub命令的SHELL环境变量值</td>
-</tr>
-<tr>
-<td align="center">PBS_O_HOST</td>
-<td align="center">执行qsub命令节点名称</td>
-</tr>
-<tr>
-<td align="center">PBS_O_WORKDIR</td>
-<td align="center">执行qsub命令所在的绝对路径</td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="提交批处理作业"><a href="#提交批处理作业" class="headerlink" title="提交批处理作业"></a>提交批处理作业</h1><blockquote>
-<p>命令行提交批处理作业：<code>$ qsub [options] &lt;control script&gt;</code></p>
-</blockquote>
-<blockquote>
-<p>作业提交后一般会先排队等待，PBS系统会根据作业的优先级和可用的计算资源来调度和执行作业</p>
-</blockquote>
-<blockquote>
-<p>PBS脚本本质上是一个Linux shell脚本，在PBS脚本中可以用一种特殊形式的注释（#PBS）作为PBS指令以设定作业属性。</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> file: example.pbs</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##set job name</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">PBS -N NAME</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##set output files</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">PBS -o name.o</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">PBS -e name.e</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##set queue name</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">PBS -q queuename</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##set number of nodes</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">PBS -l nodes=2:ppn=4</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> enter job<span class="string">'s working directory</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">cd $PBS_O_WORKDIR</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> get the number of processors</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">NP=`cat $PBS_NODEFILE | wc -l`</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> run an example job</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">mpirun -np $NP -machinefile $PBS_NODEFILE &lt;executable&gt; &lt;input file&gt;</span></pre></td></tr></table></figure>
+<h2 id="gsl-安装"><a href="#gsl-安装" class="headerlink" title="gsl 安装"></a>gsl 安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wget http://mirrors.ustc.edu.cn/gnu/gsl/gsl-2.5.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">tar -xzvf gsl-2.5.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">cd gsl-2.5/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">./configure --prefix=/home/lyh/gsl</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">make -j 12</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">make -j 12 install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">echo 'export PATH=/home/lyh/libxc/bin:$PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">echo 'export LD_LIBRARY_PATH=/home/lyh/libxc/lib:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span></pre></td></tr></table></figure>
 
-<p>编写好PBS脚本之后使用<code>$ qsub example.pbs</code>提交该作业</p>
-<hr>
-<h1 id="取消排队中的作业"><a href="#取消排队中的作业" class="headerlink" title="取消排队中的作业"></a>取消排队中的作业</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ qdel &lt;job ID&gt;</span></pre></td></tr></table></figure>
+<h2 id="libxc-安装"><a href="#libxc-安装" class="headerlink" title="libxc 安装"></a>libxc 安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wget http://www.tddft.org/programs/libxc/down.php?file=5.0.0/libxc-5.0.0.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">mv down.php\?file\=5.0.0%2Flibxc-5.0.0.tar.gz libxc-5.0.0.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">tar -zxvf libxc-5.0.0.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">./configure --prefix=/home/lyh/libxc --enable-shared</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">make -j 12</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">make check</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">make install -j 12 </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">echo 'export PATH=/home/lyh/libxc/bin:$PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">echo 'export LD_LIBRARY_PATH=/home/lyh/libxc/lib:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span></pre></td></tr></table></figure>
 
-<h1 id="停止正在运行的作业"><a href="#停止正在运行的作业" class="headerlink" title="停止正在运行的作业"></a>停止正在运行的作业</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ qsig -s KILL &lt;job ID&gt;</span></pre></td></tr></table></figure>
+<h2 id="fftw3-安装"><a href="#fftw3-安装" class="headerlink" title="fftw3 安装"></a>fftw3 安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wget ftp://ftp.fftw.org/pub/fftw/fftw-3.3.8.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">tar -zxvf fftw-3.3.8.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">mkdir fftw3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">cd fftw-3.3.8/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">./configure --enable-shared --prefix=/home/lyh/fftw3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">make -j 12</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">make -j 12 install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">make clean</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">./configure --enable-shared --enable-single --prefix=/home/lyh/fftw3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">make -j 12</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">make -j 12 install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">make clean</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">./configure --enable-shared --enable-long-double --prefix=/home/lyh/fftw3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">make -j 12</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">make -j 12 install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">make clean</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">./configure --enable-shared --enable-float --prefix=/home/lyh/fftw3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">make -j 12</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">make -j 12 install</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">make clean</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">echo 'export PATH=/home/lyh/fftw3/bin:$PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">echo 'export PKG_CONFIG_PATH=/home/lyh/fftw3/lib/pkgconfig:$PKG_CONFIG_PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">echo 'export LD_LIBRARY_PATH=/home/lyh/fftw3/lib:$LD_LIBRARY_PATH' &gt;&gt; ~/.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">echo 'export CBLAS_LIBRARY=/home/lyh/CBLAS/lib:$CBLAS_LIBRARY' &gt;&gt; ~/.bshrc</span></pre></td></tr></table></figure>
 
+<h2 id="blas-cblas-安装"><a href="#blas-cblas-安装" class="headerlink" title="blas cblas 安装"></a>blas cblas 安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wget http://www.netlib.org/blas/blas-3.8.0.tgz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">wget http://www.netlib.org/blas/blast-forum/cblas.tgz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">tar -zxvf blas-3.8.0.tgz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">tar -zxvf cblas.tgz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">cd BLAS-3.8.0/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">gcc -shared -fPIC -O3 *.f</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">ar rv libblas.a *.o</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">cd ../CBLAS/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">cp ../BLAS-3.8.0/libblas.a testing/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">mv Makefile.in Makefile.in_bak</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">ln -s Makefile.LINUX Makefile.in</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">vim Makefile.in</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##修改</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">CFLAGS = -fPIC -O3 -DADD_</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">FFLAGS = -fPIC -O3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##添加 -fPIC 参数</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">make</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##会生成lib文件夹</span></span></span></pre></td></tr></table></figure>
 
-
+<h2 id="jdftx-安装"><a href="#jdftx-安装" class="headerlink" title="jdftx 安装"></a>jdftx 安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">wget https://github.com/shankar1729/jdftx/archive/v1.6.0.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">tar -zxvf v1.6.0.tar.gz</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">cd jdftx-1.6.0/</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">mkdir build</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">cd build</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">------</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##使用intel编译</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">CC=icc CXX= icpc cmake \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">-D EnableCUDA=no \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">-D GSL_PATH=/home/lyh/gsl \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">-D ForceFFTW=yes \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">-D FFTW3_PATH=/home/lyh/fftw3 \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">-D FFTW3_THREADS_LIBRARY=/home/lyh/fftw3/lib/libfftw3f.a \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">-D EnableLibXC=yes \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">-D LIBXC_PATH=/home/lyh/libxc \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">-D ThreadeBlas=yes \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">-D CBLAS_PATH=/home/lyh/CBLAS \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">-D CBLAS_LIBRARY=/home/lyh/CBLAS/lib/cblas_LINUX.a \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">../jdftx</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">##使用gcc编译</span></span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">CC=gcc CXX=g++ cmake \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">-D EnableCUDA=no \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">-D GSL_PATH=/home/lyh/gsl \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">-D ForceFFTW=yes \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">-D FFTW3_PATH=/home/lyh/fftw3 \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">-D FFTW3_THREADS_LIBRARY=/home/lyh/fftw3/lib/libfftw3f.a \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">-D EnableLibXC=yes \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">-D LIBXC_PATH=/home/lyh/libxc \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">-D CBLAS_PATH=/home/lyh/CBLAS \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">-D CBLAS_LIBRARY=/home/lyh/CBLAS/lib/cblas_LINUX.a \</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">../jdftx</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">------</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line">make -j 12</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line">echo 'export PATH="/home/lyh/jdftx-1.6.0/build:/home/lyh/jdftx-1.6.0/jdftx/scripts:$PATH"' &gt;&gt; ~/.bashrc</span></pre></td></tr></table></figure>
 
       
 
@@ -370,7 +200,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color4">PBS</a>
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">软件</a>
         		</li>
       		
 		</ul>
@@ -426,7 +256,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://lu-git.github.io/2019/12/10/PBS_system/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lu-git.github.io/2020/12/31/JDFTx%20%E5%AE%89%E8%A3%85/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -440,18 +270,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/05/28/centos%20GCC%208.%203.0%20install/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          CentOS编译安装GCC 8.3.0
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/12/09/DNS_setup/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">搭建DNS服务器</div>
+    <a href="/2020/12/31/GCC%2010.2%20install/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CentOS7编译安装GCC 10.2</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -478,7 +299,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PBS简介"><span class="toc-number">1.</span> <span class="toc-text">PBS简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PBS常用命令"><span class="toc-number">2.</span> <span class="toc-text">PBS常用命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#作业监测"><span class="toc-number">3.</span> <span class="toc-text">作业监测</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#节点状态"><span class="toc-number">4.</span> <span class="toc-text">节点状态</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PBS作业属性"><span class="toc-number">5.</span> <span class="toc-text">PBS作业属性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PBS环境变量"><span class="toc-number">6.</span> <span class="toc-text">PBS环境变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#提交批处理作业"><span class="toc-number">7.</span> <span class="toc-text">提交批处理作业</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#取消排队中的作业"><span class="toc-number">8.</span> <span class="toc-text">取消排队中的作业</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#停止正在运行的作业"><span class="toc-number">9.</span> <span class="toc-text">停止正在运行的作业</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JDFTx-安装"><span class="toc-number">1.</span> <span class="toc-text">JDFTx 安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#gsl-安装"><span class="toc-number">1.1.</span> <span class="toc-text">gsl 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#libxc-安装"><span class="toc-number">1.2.</span> <span class="toc-text">libxc 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fftw3-安装"><span class="toc-number">1.3.</span> <span class="toc-text">fftw3 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#blas-cblas-安装"><span class="toc-number">1.4.</span> <span class="toc-text">blas cblas 安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jdftx-安装"><span class="toc-number">1.5.</span> <span class="toc-text">jdftx 安装</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -505,7 +326,7 @@
 <script src="https://billts.site/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "PBS作业调度系统",
+  id: "CentOS7编译安装JDFTx",
   owner: 'lu-git',
   repo: 'blog-comment',
   oauth: {
