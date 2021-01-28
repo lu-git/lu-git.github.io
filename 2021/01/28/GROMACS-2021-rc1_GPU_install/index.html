@@ -6,15 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lu-git.github.io">
-  <title>Tag: 软件 | 卢记杂货店</title>
+  <title>GROMACS-2021-rc1_GPU_install | 卢记杂货店</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="与我常在">
-<meta property="og:type" content="website">
-<meta property="og:title" content="卢记杂货店">
-<meta property="og:url" content="https:&#x2F;&#x2F;lu-git.github.io&#x2F;tags&#x2F;%E8%BD%AF%E4%BB%B6&#x2F;index.html">
+  <meta name="description" content="GROMACS-2021-rc1 GPU版编译安装 本文gromacs-2021-rc1 编译安装所用环境：GCC 8.3.0 intel 2019 CUDA 10.1 cmake 3.17.2  GCC 8.3.0 安装教程GCC 8.3.0  cmake 3.17.2 安装参考教程cmake 3.15.3  CUDA 10.1 和 Intel 2019 安装此处省略   编译安装1cmake">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GROMACS-2021-rc1_GPU_install">
+<meta property="og:url" content="https:&#x2F;&#x2F;lu-git.github.io&#x2F;2021&#x2F;01&#x2F;28&#x2F;GROMACS-2021-rc1_GPU_install&#x2F;index.html">
 <meta property="og:site_name" content="卢记杂货店">
-<meta property="og:description" content="与我常在">
+<meta property="og:description" content="GROMACS-2021-rc1 GPU版编译安装 本文gromacs-2021-rc1 编译安装所用环境：GCC 8.3.0 intel 2019 CUDA 10.1 cmake 3.17.2  GCC 8.3.0 安装教程GCC 8.3.0  cmake 3.17.2 安装参考教程cmake 3.15.3  CUDA 10.1 和 Intel 2019 安装此处省略   编译安装1cmake">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2021-01-28T01:26:50.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="卢记杂货店" type="application/atom+xml">
@@ -145,147 +146,177 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-GROMACS-2021-rc1_GPU_install" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/12/31/JDFTx%20%E5%AE%89%E8%A3%85/" class="archive-article-date">
-  	<time datetime="2020-12-31T00:21:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/12/31/JDFTx%20%E5%AE%89%E8%A3%85/">CentOS7编译安装JDFTx</a>
+    <h1 class="article-title" itemprop="name">
+      GROMACS-2021-rc1_GPU_install
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">软件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/05/amber18_install/" class="archive-article-date">
-  	<time datetime="2019-12-05T14:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
+        
+        <a href="/2021/01/28/GROMACS-2021-rc1_GPU_install/" class="archive-article-date">
+  	<time datetime="2021-01-28T01:27:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-28</time>
 </a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="GROMACS-2021-rc1-GPU版编译安装"><a href="#GROMACS-2021-rc1-GPU版编译安装" class="headerlink" title="GROMACS-2021-rc1 GPU版编译安装"></a>GROMACS-2021-rc1 GPU版编译安装</h1><ul>
+<li><p>本文gromacs-2021-rc1 编译安装所用环境：<code>GCC 8.3.0</code> <code>intel 2019</code> <code>CUDA 10.1</code> <code>cmake 3.17.2</code></p>
+</li>
+<li><p>GCC 8.3.0 安装教程<a href="https://lu-git.github.io/2020/05/28/centos%20GCC%208.%203.0%20install/">GCC 8.3.0</a></p>
+</li>
+<li><p>cmake 3.17.2 安装参考教程<a href="https://lu-git.github.io/2019/12/05/cmake_install/">cmake 3.15.3</a></p>
+</li>
+<li><p>CUDA 10.1 和 Intel 2019 安装此处省略</p>
+</li>
+</ul>
+<h2 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">cmake .. -DGMX_HWLOC=off -DBUILD_SHARED_LIBS=ON -DGMX_BUILD_FOR_COVERAGE=on -DCMAKE_BUILD_TYPE=Release -DGMX_CUDA_NB_SINGLE_COMPILATION_UNIT=on -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++ -DGMX_MPI=on -DGMXAPI=OFF -DGMX_GPU=CUDA -DGMX_OPENMP=on -DGMX_GPU_DETECTION_DONE=on -DCUDA_TOOLKIT_ROOT_DIR=/opt/cuda-10.1 -DGMX_SIMD=AUTO -DCMAKE_INSTALL_PREFIX=/parastor/home/lyh/gromacs-2021-GPU  -DGMX_FFT_LIBRARY=fftw3 -DFFTWF_LIBRARY=/parastor/home/lyh/mathlib/fftw-3.3.8/lib/libfftw3f.so -DFFTWF_INCLUDE_DIR=/parastor/home/lyh/mathlib/fftw-3.3.8/include -DREGRESSIONTEST_DOWNLOAD=OFF -DCMAKE_PREFIX_PATH=/parastor/home/lyh/mathlib/fftw-3.3.8 -DGMX_DEVELOPER_BUILD=off</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">make -j 4</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">make -j 4 install</span></pre></td></tr></table></figure>
+
+<blockquote>
+<p>-DCUDA_TOOLKIT_ROOT_DIR CUDA安装路径</p>
+<p>-DCMAKE_INSTALL_PREFIX Gromacs安装路径</p>
+<p>-DCMAKE_PREFIX_PATH 手动安装的fftw等路径，此处只为fftw安装路径</p>
+<p>-DGMX_BUILD_OWN_FFTW=ON 软件安装过程中自动安装fftw</p>
+</blockquote>
+
+      
+
+
+        
+        
+          <div hidden="hidden"></div>
+        
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/05/amber18_install/">CentOS7编译安装Amber18</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">软件</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lu-git.github.io/2021/01/28/GROMACS-2021-rc1_GPU_install/" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/12/05/cmake_install/" class="archive-article-date">
-  	<time datetime="2019-12-05T03:32:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/12/31/JDFTx%20%E5%AE%89%E8%A3%85/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CentOS7编译安装JDFTx</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/05/cmake_install/">CentOS 7.5 编译安装CMake-3.15.3</a>
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">软件</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
     
 
+  
+
+  
+
+  
+
+  
+  <div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<script src="https://billts.site/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "GROMACS-2021-rc1_GPU_install",
+  owner: 'lu-git',
+  repo: 'blog-comment',
+  oauth: {
+    client_id: '9cd86ab140b705ecddad',
+    client_secret: '2e136e83c68069c5d9e2b3038f5bc02d9eb667f0',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
+
+  
 
 
           </div>
@@ -308,9 +339,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
