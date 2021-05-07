@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lu-git.github.io">
-  <title>CentOS 7.5 编译安装CMake-3.15.3 | 卢记杂货店</title>
+  <title>CentOS7使用conda安装PSI4 | 卢记杂货店</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="cmake简介">
+  <meta name="description" content="1#需要先安装好miniconda或者anaconda，此处不再赘述23#使用conda&amp;#x2F;python3.5安装psi44conda create -n p4env python&amp;#x3D;3.5 psi4 psi4-rt -c psi4&amp;#x2F;label&amp;#x2F;dev -c psi45conda activate p4env6#更新到最新的稳定版本7conda update p">
 <meta name="keywords" content="软件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CentOS 7.5 编译安装CMake-3.15.3">
-<meta property="og:url" content="https:&#x2F;&#x2F;lu-git.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;cmake_install&#x2F;index.html">
+<meta property="og:title" content="CentOS7使用conda安装PSI4">
+<meta property="og:url" content="https:&#x2F;&#x2F;lu-git.github.io&#x2F;2021&#x2F;04&#x2F;27&#x2F;PSI4_install&#x2F;index.html">
 <meta property="og:site_name" content="卢记杂货店">
-<meta property="og:description" content="cmake简介">
+<meta property="og:description" content="1#需要先安装好miniconda或者anaconda，此处不再赘述23#使用conda&amp;#x2F;python3.5安装psi44conda create -n p4env python&amp;#x3D;3.5 psi4 psi4-rt -c psi4&amp;#x2F;label&amp;#x2F;dev -c psi45conda activate p4env6#更新到最新的稳定版本7conda update p">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-12-31T03:08:06.000Z">
+<meta property="og:updated_time" content="2021-05-07T01:42:39.000Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="卢记杂货店" type="application/atom+xml">
@@ -147,42 +147,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-cmake_install" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-PSI4_install" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      CentOS 7.5 编译安装CMake-3.15.3
+      CentOS7使用conda安装PSI4
     </h1>
   
 
         
-        <a href="/2019/12/05/cmake_install/" class="archive-article-date">
-  	<time datetime="2019-12-05T03:32:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
+        <a href="/2021/04/27/PSI4_install/" class="archive-article-date">
+  	<time datetime="2021-04-27T07:50:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="cmake简介"><a href="#cmake简介" class="headerlink" title="cmake简介"></a>cmake简介</h1><a id="more"></a>
-
-<p>   cmake是一个跨平台的安装（编译）工具，可以用简单的语句来描述所有平台的安装（编译过程）。</p>
-<h1 id="cmake下载"><a href="#cmake下载" class="headerlink" title="cmake下载"></a>cmake下载</h1><p>   <a href="https://cmake.org/" target="_blank" rel="noopener">cmake官方网址</a></p>
-<p>   <a href="https://pan.baidu.com/s/1JemZdFcKtmfJQnUFlxxKPg" target="_blank" rel="noopener">cmake网盘下载地址</a> 提取码：6nok</p>
-<h1 id="cmake编译安装"><a href="#cmake编译安装" class="headerlink" title="cmake编译安装"></a>cmake编译安装</h1><p>   安装之前要确保已经安装的有<code>gcc</code>、<code>g++</code>。</p>
-<p>   下为实际安装过程，路径设置请根据各自所需。</p>
-<p>   下载完毕后上传到服务器上，压缩包上传路径为<code>/home/lyh/MDT/package/</code>，安装路径为<code>/home/lyh/MDT/software</code>。</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ cd ~&#x2F;MDT&#x2F;package&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ tar -zxvf cmake-3.15.3.tar.gz -C ..&#x2F;software&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">$ cd ..&#x2F;software&#x2F;cmake-3.15.3&#x2F;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">$ .&#x2F;bootstrap --prefix&#x3D;&#x2F;home&#x2F;lyh&#x2F;MDT&#x2F;software&#x2F;cmale</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">$ gmake</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">$ gmake install</span></pre></td></tr></table></figure>
-
-<p>   查看所安装的文件位置信息</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ more install_mainfest.txt</span></pre></td></tr></table></figure>
-
-<p>   添加环境变量</p>
-   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">$ echo &quot;export PATH&#x3D;&#x2F;home&#x2F;lyh&#x2F;MDT&#x2F;software&#x2F;cmake&#x2F;bin:$PATH&quot; &gt;&gt; ~&#x2F;.bashrc</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">$ source ~&#x2F;.bashrc</span></pre></td></tr></table></figure>
-
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">#需要先安装好miniconda或者anaconda，此处不再赘述</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">#使用conda&#x2F;python3.5安装psi4</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">conda create -n p4env python&#x3D;3.5 psi4 psi4-rt -c psi4&#x2F;label&#x2F;dev -c psi4</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">conda activate p4env</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">#更新到最新的稳定版本</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">conda update psi4 -c psi4</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">#测试</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">psi4 --test</span></pre></td></tr></table></figure>
 
 
       
@@ -259,7 +244,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://lu-git.github.io/2019/12/05/cmake_install/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lu-git.github.io/2021/04/27/PSI4_install/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -273,15 +258,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/12/05/amber18_install/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/05/07/lammps_29_Oct_2020_install/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CentOS7编译安装Amber18
+          CentOS7安装lammps_29_Oct_2020
         
       </div>
     </a>
   
+  
+    <a href="/2021/01/28/GROMACS-2021-rc1_GPU_install/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CentOS7编译安装GROMACS-2021-rc1 GPU版</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -306,7 +296,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#cmake简介"><span class="toc-number">1.</span> <span class="toc-text">cmake简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cmake下载"><span class="toc-number">2.</span> <span class="toc-text">cmake下载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#cmake编译安装"><span class="toc-number">3.</span> <span class="toc-text">cmake编译安装</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
@@ -333,7 +323,7 @@
 <script src="https://billts.site/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "CentOS 7.5 编译安装CMake-3.15.3",
+  id: "CentOS7使用conda安装PSI4",
   owner: 'lu-git',
   repo: 'blog-comment',
   oauth: {

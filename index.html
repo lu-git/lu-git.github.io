@@ -61,8 +61,8 @@
 			</ul>
 		</nav>
 		<nav>
-			<a>总文章数 9</a>
-			<a>总字数 <span class="post-count">5.9k</span></a>
+			<a>总文章数 11</a>
+			<a>总字数 <span class="post-count">6.2k</span></a>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -146,6 +146,167 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-lammps_29_Oct_2020_install" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/07/lammps_29_Oct_2020_install/">CentOS7安装lammps_29_Oct_2020</a>
+    </h1>
+  
+
+        
+        <a href="/2021/05/07/lammps_29_Oct_2020_install/" class="archive-article-date">
+  	<time datetime="2021-05-07T00:53:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="LAMMPS简介"><a href="#LAMMPS简介" class="headerlink" title="LAMMPS简介"></a>LAMMPS简介</h1><p>​        LAMMPS由美国Sandia<a href="https://baike.baidu.com/item/国家实验室/3082483" target="_blank" rel="noopener">国家实验室</a>开发，以GPL license发布，即<a href="https://baike.baidu.com/item/开放源代码/114160" target="_blank" rel="noopener">开放源代码</a>且可以免费获取使用，这意味着使用者可以根据自己的需要自行修改<a href="https://baike.baidu.com/item/源代码/3969" target="_blank" rel="noopener">源代码</a>。LAMMPS可以支持包括<a href="https://baike.baidu.com/item/气态" target="_blank" rel="noopener">气态</a>，液态或者固态相形态下、各种<a href="https://baike.baidu.com/item/系综/5815383" target="_blank" rel="noopener">系综</a>下、百万级的原子分子体系，并提供支持多种<a href="https://baike.baidu.com/item/势函数/4489359" target="_blank" rel="noopener">势函数</a>。且LAMMPS有良好的并行扩展性。</p>
+        
+      
+
+
+        
+        
+          <div hidden="hidden"></div>
+        
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">软件</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/05/07/lammps_29_Oct_2020_install/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-PSI4_install" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/27/PSI4_install/">CentOS7使用conda安装PSI4</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/27/PSI4_install/" class="archive-article-date">
+  	<time datetime="2021-04-27T07:50:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">#需要先安装好miniconda或者anaconda，此处不再赘述</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">#使用conda&#x2F;python3.5安装psi4</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">conda create -n p4env python&#x3D;3.5 psi4 psi4-rt -c psi4&#x2F;label&#x2F;dev -c psi4</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">conda activate p4env</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">#更新到最新的稳定版本</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">conda update psi4 -c psi4</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">#测试</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">psi4 --test</span></pre></td></tr></table></figure>
+
+
+      
+
+
+        
+        
+          <div hidden="hidden"></div>
+        
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">软件</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/27/PSI4_install/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-GROMACS-2021-rc1_GPU_install" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -800,86 +961,10 @@
 
 
   
-    <article id="post-cmake_install" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/05/cmake_install/">CentOS 7.5 编译安装CMake-3.15.3</a>
-    </h1>
-  
-
-        
-        <a href="/2019/12/05/cmake_install/" class="archive-article-date">
-  	<time datetime="2019-12-05T03:32:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-12-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="cmake简介"><a href="#cmake简介" class="headerlink" title="cmake简介"></a>cmake简介</h1>
-        
-      
-
-
-        
-        
-          <div hidden="hidden"></div>
-        
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag article-tag-list-link color3">软件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/12/05/cmake_install/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
@@ -970,15 +1055,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">DNS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color4">PBS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" target="_blank" rel="noopener" class="js-tag color3">工具</a>
               </li>
             
             <div class="clearfix"></div>
